@@ -28,12 +28,13 @@ import org.andengine.ui.activity.SimpleBaseGameActivity;
 import org.andengine.util.color.Color;
 import org.andengine.util.debug.Debug;
 import Animation.AnimationDrawTutorial;
+import Menu.MenuScene;
 import Objects.createObjects;
 import ScreenShoot.BitmapTextureAtlasSource;
 import android.media.MediaPlayer;
 import android.view.Display;
 
-public class MainActivity extends SimpleBaseGameActivity implements IOnSceneTouchListener 
+public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouchListener 
 	{
 
 	public static int CAMERA_WIDTH, CAMERA_HEIGHT;
@@ -41,7 +42,7 @@ public class MainActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 	public static Scene mScene;
 	public static Scene menuScene;
 	public static VertexBufferObjectManager vertexBufferObjectManager;
-	public static MainActivity MainActivityInstace;
+	public static GameActivity MainActivityInstace;
 
 	
 	
@@ -171,7 +172,7 @@ public class MainActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 	public static Rectangle rectangle;
 	public static float moOutLineX, moOutLineY;
 
-	public static String DEBUG_TAG = MainActivity.class.getSimpleName();
+	public static String DEBUG_TAG = GameActivity.class.getSimpleName();
 	
 	public static int iCounter, screenShotCounter, shakeCounter = 0, sCounter, wCounter;
 	public static int aCounter = 0, bCounter, serialCounter = 1, totalLoadNumberPic = 20;
@@ -690,55 +691,57 @@ public class MainActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 	{
 		// TODO Auto-generated method stub
 		
-		mScene = new MenuScene();
+		mScene = new Scene();
 		//getEngine().setScene(mScene);
 //		mScene.setBackground(new Background(Color.WHITE));
 //
 		mScene.setOnSceneTouchListener(this);
+		
+		//Initializing all the variables
 		vertexBufferObjectManager = getVertexBufferObjectManager();
-//		
-//		serialCounter = 1;
-//		sCounter = 0;
-//		wCounter = 0;
-//		monkeyTutorialStart = 0;
-//		state = 0;
-//		spriteCounter = 1;
-//		spriteCounterLimit = 0;
-//		posX = 0;
-//		posY = 0;
-//		isShaking = false;
-//		isPopupActive  = false;
-//		isHandTutorialActive = false;
-//		isActionMoving = true;
-//		touch = 0;
-//		soundCounter=0;
-//		bCounter = 0;
-//		changeTexture = 0;
-//		screenShotCounter = 0;
-//		tutorialCounter = 0;
-//		dusterCounter = 0;
-//		dusterFinishCounter = 0;
-//		letter = 0;
-//
-//		//getting the renderView width and height for taking the screen shot
-//		viewWidth = MainActivity.MainActivityInstace.mRenderSurfaceView.getWidth() - 490;
-//		viewHeight = MainActivity.MainActivityInstace.mRenderSurfaceView.getHeight() - 165;
-//		
-//		moOutLineX = CAMERA_WIDTH / 2 - 130;
-//		moOutLineY = CAMERA_HEIGHT / 2 - 130;
-//		
-//		//Timer for drawing during monkey Tutorial
-//		AnimationDrawTutorial.animationDrawTimer();
-//		mScene.registerUpdateHandler(timer1);
-//				
-//		//1.Mo 2.Aa 3.e 4.Raw 5.Ko 6.Bo 7.TalibaSha 8.Lo 9.Po 10.Go 11.Ho
-//		//12.Kho 13.Cho 14.No 15.A 16.Do 17.U 18.To 19.Toh 20.Doh 21.Ukar
-//		//22.Ekar 23.Akar
-//		 
+		
+		serialCounter = 1;
+		sCounter = 0;
+		wCounter = 0;
+		monkeyTutorialStart = 0;
+		state = 0;
+		spriteCounter = 1;
+		spriteCounterLimit = 0;
+		posX = 0;
+		posY = 0;
+		isShaking = false;
+		isPopupActive  = false;
+		isHandTutorialActive = false;
+		isActionMoving = true;
+		touch = 0;
+		soundCounter=0;
+		bCounter = 0;
+		changeTexture = 0;
+		screenShotCounter = 0;
+		tutorialCounter = 0;
+		dusterCounter = 0;
+		dusterFinishCounter = 0;
+		letter = 0;
+
+		//getting the renderView width and height for taking the screen shot
+		viewWidth = GameActivity.MainActivityInstace.mRenderSurfaceView.getWidth() - 490;
+		viewHeight = GameActivity.MainActivityInstace.mRenderSurfaceView.getHeight() - 165;
+		
+		moOutLineX = CAMERA_WIDTH / 2 - 130;
+		moOutLineY = CAMERA_HEIGHT / 2 - 130;
+		
+		//Timer for drawing during monkey Tutorial
+		AnimationDrawTutorial.animationDrawTimer();
+		mScene.registerUpdateHandler(timer1);
+				
+		//1.Mo 2.Aa 3.e 4.Raw 5.Ko 6.Bo 7.TalibaSha 8.Lo 9.Po 10.Go 11.Ho
+		//12.Kho 13.Cho 14.No 15.A 16.Do 17.U 18.To 19.Toh 20.Doh 21.Ukar
+		//22.Ekar 23.Akar
+		 
 //		//choose the letter with number
-//		MainActivity.letter = 1; 
+		GameActivity.letter = Menu.letterNumber; 
 //		//create objects
-//		createObjects.createObject();
+		createObjects.createObject();
 //		
 //		//create book icon
 ////		PopUp.createBookIcon();
@@ -754,7 +757,7 @@ public class MainActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 	public static void setCurrentScene(Scene scene) 
 	{
 	    mScene = scene;
-	    MainActivity.MainActivityInstace.getEngine().setScene(mScene);
+	    GameActivity.MainActivityInstace.getEngine().setScene(mScene);
 	}
 	
 	@Override

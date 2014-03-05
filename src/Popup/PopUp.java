@@ -9,7 +9,7 @@ import org.andengine.entity.sprite.Sprite;
 import org.andengine.input.touch.TouchEvent;
 import org.andengine.util.modifier.ease.EaseBounceOut;
 
-import com.example.banglaletterwriting.MainActivity;
+import com.example.banglaletterwriting.GameActivity;
 
 public class PopUp
 {
@@ -23,8 +23,8 @@ public class PopUp
 		createPopUp();
 				
 		// create book icon
-		MainActivity.bookIcon = new Sprite(0, MainActivity.CAMERA_HEIGHT - 200, 
-				MainActivity.mBookIconRegion, MainActivity.vertexBufferObjectManager) 
+		GameActivity.bookIcon = new Sprite(0, GameActivity.CAMERA_HEIGHT - 200, 
+				GameActivity.mBookIconRegion, GameActivity.vertexBufferObjectManager) 
 		{
 			@Override
 			public boolean onAreaTouched(final TouchEvent pSceneTouchEvent, final float pTouchAreaLocalX, 
@@ -37,7 +37,7 @@ public class PopUp
 					popValue = 1;
 					
 					//if the pop up is active, then disabling the book icon from pressing again
-					if(MainActivity.isPopupActive == false)
+					if(GameActivity.isPopupActive == false)
 					{
 						startPopUp(0);
 					}
@@ -53,10 +53,10 @@ public class PopUp
 				return true;
 			}
 		};
-		MainActivity.mScene.registerTouchArea(MainActivity.bookIcon);
-		MainActivity.bookIcon.setScale((float) 0.6);
-		MainActivity.mScene.attachChild(MainActivity.bookIcon);
-		MainActivity.mScene.sortChildren();
+		GameActivity.mScene.registerTouchArea(GameActivity.bookIcon);
+		GameActivity.bookIcon.setScale((float) 0.6);
+		GameActivity.mScene.attachChild(GameActivity.bookIcon);
+		GameActivity.mScene.sortChildren();
 		
 	}
 	
@@ -65,176 +65,176 @@ public class PopUp
 	{
 		
 		//creating pop up area
-		popUpArea = new Entity(100, MainActivity.CAMERA_HEIGHT + 100);
-		MainActivity.mScene.attachChild(popUpArea);
+		popUpArea = new Entity(100, GameActivity.CAMERA_HEIGHT + 100);
+		GameActivity.mScene.attachChild(popUpArea);
 		popUpArea.setZIndex(5);
 		
 		//creating pop up window
-		MainActivity.createPopUp = new Sprite(-500, -300, MainActivity.mCreatePopUpRegion,
-				MainActivity.vertexBufferObjectManager);
-		MainActivity.createPopUp.setScale((float) 0.5);
-		popUpArea.attachChild(MainActivity.createPopUp);
+		GameActivity.createPopUp = new Sprite(-500, -300, GameActivity.mCreatePopUpRegion,
+				GameActivity.vertexBufferObjectManager);
+		GameActivity.createPopUp.setScale((float) 0.5);
+		popUpArea.attachChild(GameActivity.createPopUp);
 
 		//creating board
-		MainActivity.board = new Sprite(180, -200, MainActivity.mPopUpBlackBoardTextureRegion,
-				MainActivity.vertexBufferObjectManager);
-		MainActivity.board.setScale((float) 0.6);
-		popUpArea.attachChild(MainActivity.board);
+		GameActivity.board = new Sprite(180, -200, GameActivity.mPopUpBlackBoardTextureRegion,
+				GameActivity.vertexBufferObjectManager);
+		GameActivity.board.setScale((float) 0.6);
+		popUpArea.attachChild(GameActivity.board);
 
 		//creating correct letter
 		//Mo
-		if(MainActivity.letter == 1)
+		if(GameActivity.letter == 1)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mMoFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mMoFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//Aa
-		else if(MainActivity.letter == 2)
+		else if(GameActivity.letter == 2)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mAaFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mAaFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//E
-		else if(MainActivity.letter == 3)
+		else if(GameActivity.letter == 3)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mEFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mEFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//Raw
-		else if(MainActivity.letter == 4)
+		else if(GameActivity.letter == 4)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mRawFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mRawFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//Ko
-		else if(MainActivity.letter == 5)
+		else if(GameActivity.letter == 5)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mKoFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mKoFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//Bo
-		else if(MainActivity.letter == 6)
+		else if(GameActivity.letter == 6)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mBoFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mBoFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//Talibasha
-		else if(MainActivity.letter == 7)
+		else if(GameActivity.letter == 7)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mTalibashaFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mTalibashaFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//Lo
-		else if(MainActivity.letter == 8)
+		else if(GameActivity.letter == 8)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mLoFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mLoFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//Po
-		else if(MainActivity.letter == 9)
+		else if(GameActivity.letter == 9)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mPoFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mPoFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//Go
-		else if(MainActivity.letter == 10)
+		else if(GameActivity.letter == 10)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mGoFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mGoFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//Ho
-		else if(MainActivity.letter == 11)
+		else if(GameActivity.letter == 11)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mHoFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mHoFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//Kho
-		else if(MainActivity.letter == 12)
+		else if(GameActivity.letter == 12)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mKhoFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mKhoFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//Kho
-		else if(MainActivity.letter == 13)
+		else if(GameActivity.letter == 13)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mChoFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mChoFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//No
-		else if(MainActivity.letter == 14)
+		else if(GameActivity.letter == 14)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mNoFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mNoFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//A
-		else if(MainActivity.letter == 15)
+		else if(GameActivity.letter == 15)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mAFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mAFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//Do
-		else if(MainActivity.letter == 16)
+		else if(GameActivity.letter == 16)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mDoFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mDoFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//U
-		else if(MainActivity.letter == 17)
+		else if(GameActivity.letter == 17)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mUFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mUFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//To
-		else if(MainActivity.letter == 18)
+		else if(GameActivity.letter == 18)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mToFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mToFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//Toh
-		else if(MainActivity.letter == 19)
+		else if(GameActivity.letter == 19)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mTohFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mTohFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//Doh
-		else if(MainActivity.letter == 20)
+		else if(GameActivity.letter == 20)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mDohFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mDohFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//Ukar
-		else if(MainActivity.letter == 21)
+		else if(GameActivity.letter == 21)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mUkarFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mUkarFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//Ekar
-		else if(MainActivity.letter == 22)
+		else if(GameActivity.letter == 22)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mEkarFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mEkarFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 		//Akar
-		else if(MainActivity.letter == 23)
+		else if(GameActivity.letter == 23)
 		{
-			MainActivity.correctLetter = new Sprite(270, -130, MainActivity.mAkarFilledTextureRegion,
-					MainActivity.vertexBufferObjectManager);
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mAkarFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
 		}
 			
 		
-		MainActivity.correctLetter.setScale((float) 0.4);
-		popUpArea.attachChild(MainActivity.correctLetter);
+		GameActivity.correctLetter.setScale((float) 0.4);
+		popUpArea.attachChild(GameActivity.correctLetter);
 		
 		//creating another board
-		MainActivity.board = new Sprite(-180, -200, MainActivity.mPopUpBlackBoardTextureRegion,
-				MainActivity.vertexBufferObjectManager);
-		MainActivity.board.setScale((float) 0.6);
-		popUpArea.attachChild(MainActivity.board);
+		GameActivity.board = new Sprite(-180, -200, GameActivity.mPopUpBlackBoardTextureRegion,
+				GameActivity.vertexBufferObjectManager);
+		GameActivity.board.setScale((float) 0.6);
+		popUpArea.attachChild(GameActivity.board);
 
 		
 		//closing the pop up window by pressing cross button
-		MainActivity.cross = new Sprite(530, -150, MainActivity.mCrossRegion,
-				MainActivity.vertexBufferObjectManager) 
+		GameActivity.cross = new Sprite(530, -150, GameActivity.mCrossRegion,
+				GameActivity.vertexBufferObjectManager) 
 		{
 			@Override
 			public boolean onAreaTouched(final TouchEvent pSceneTouchEvent,
@@ -245,7 +245,7 @@ public class PopUp
 				case TouchEvent.ACTION_DOWN:
 
 					//when the handtutorial is inactive, then it works
-					if(MainActivity.isHandTutorialActive == false)
+					if(GameActivity.isHandTutorialActive == false)
 					{
 						popValue = 2;
 					
@@ -263,41 +263,41 @@ public class PopUp
 				return true;
 			}
 		};
-		MainActivity.mScene.registerTouchArea(MainActivity.cross);
-		MainActivity.cross.setScale((float) 0.3);
-		popUpArea.attachChild(MainActivity.cross);
+		GameActivity.mScene.registerTouchArea(GameActivity.cross);
+		GameActivity.cross.setScale((float) 0.3);
+		popUpArea.attachChild(GameActivity.cross);
 	}
 
 	//pop up function for up and down
 	public static void startPopUp(final int upDown) 
 	{
 
-		MainActivity.popUpValue = upDown;
+		GameActivity.popUpValue = upDown;
 		Path createPopUpPath = null;
 
 		// Down to up or opening pop up
 		if (upDown == 0) 
 		{
-			MainActivity.isPopupActive = true;
+			GameActivity.isPopupActive = true;
 
 			createPopUpPath = new Path(2).to(100,
-					MainActivity.CAMERA_HEIGHT + 500).to(100, 100);
+					GameActivity.CAMERA_HEIGHT + 500).to(100, 100);
 		}
 		// Up to down or closing pop up
 		else if (upDown == 1) 
 		{
 			createPopUpPath = new Path(2).to(100, 100).to(100,
-					MainActivity.CAMERA_HEIGHT + 500);
+					GameActivity.CAMERA_HEIGHT + 500);
 		}
 
 
 		// If screen shot taken, then show screen shot image
-		if (MainActivity.changeTexture == 1) 
+		if (GameActivity.changeTexture == 1) 
 		{
-			MainActivity.drawnPicture = new Sprite(-40, -60, MainActivity.textureRegion,
-					MainActivity.vertexBufferObjectManager);
-			MainActivity.drawnPicture.setScale((float) 0.6);
-			popUpArea.attachChild(MainActivity.drawnPicture);
+			GameActivity.drawnPicture = new Sprite(-40, -60, GameActivity.textureRegion,
+					GameActivity.vertexBufferObjectManager);
+			GameActivity.drawnPicture.setScale((float) 0.6);
+			popUpArea.attachChild(GameActivity.drawnPicture);
 		}
 
 		popUpArea.registerEntityModifier(new PathModifier((float) 1.3,
@@ -330,7 +330,7 @@ public class PopUp
 					{
 						if(upDown == 1)
 						{
-							MainActivity.isPopupActive = false;
+							GameActivity.isPopupActive = false;
 						}
 					}
 				}, EaseBounceOut.getInstance()));

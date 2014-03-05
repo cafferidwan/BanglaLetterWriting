@@ -35,7 +35,7 @@ import Letters.LetterStructureToh;
 import Letters.LetterStructureU;
 import Letters.LetterStructureUkar;
 
-import com.example.banglaletterwriting.MainActivity;
+import com.example.banglaletterwriting.GameActivity;
 
 public class StructureDrawAnimation 
 {
@@ -43,16 +43,16 @@ public class StructureDrawAnimation
 	public static void scale(float x, float y, int c)
 	{
 			
-			if(c<=MainActivity.spriteCounterLimit)
+			if(c<=GameActivity.spriteCounterLimit)
 			{
 			
-				MainActivity.numberSprites[MainActivity.spriteCounter] = new Sprite(x, y, 
-						MainActivity.mTextureRegionNumber[MainActivity.spriteCounter], MainActivity.vertexBufferObjectManager);
+				GameActivity.numberSprites[GameActivity.spriteCounter] = new Sprite(x, y, 
+						GameActivity.mTextureRegionNumber[GameActivity.spriteCounter], GameActivity.vertexBufferObjectManager);
 				
-				MainActivity.numberSprites[MainActivity.spriteCounter].setScale((float)0.1);
-				MainActivity.numberSprites[MainActivity.spriteCounter].setZIndex(0);
-				MainActivity.mScene.attachChild(MainActivity.numberSprites[MainActivity.spriteCounter]);
-				MainActivity.mScene.registerTouchArea(MainActivity.numberSprites[MainActivity.spriteCounter]);
+				GameActivity.numberSprites[GameActivity.spriteCounter].setScale((float)0.1);
+				GameActivity.numberSprites[GameActivity.spriteCounter].setZIndex(0);
+				GameActivity.mScene.attachChild(GameActivity.numberSprites[GameActivity.spriteCounter]);
+				GameActivity.mScene.registerTouchArea(GameActivity.numberSprites[GameActivity.spriteCounter]);
 		
 				ScaleModifier scaleModifier = new ScaleModifier((float) 0.05, 0.1f, 0.3f);
 				LoopEntityModifier loopRotateMod = new LoopEntityModifier( new RotationModifier(4, 0, 360));
@@ -63,126 +63,126 @@ public class StructureDrawAnimation
 						public void onModifierStarted(IModifier<IEntity> arg0,
 								IEntity arg1)
 						{
-							MainActivity.isActionMoving =false;
+							GameActivity.isActionMoving =false;
 						}
 
 						@Override
 						public void onModifierFinished(IModifier<IEntity> arg0,
 								IEntity arg1)
 						{
-							MainActivity.isActionMoving = true;
+							GameActivity.isActionMoving = true;
 							//For letter Mo
-							if(MainActivity.letter == 1)
+							if(GameActivity.letter == 1)
 							{
 								LetterStructureMo.Structure();
 							}
 							//For letter Aa
-							else if(MainActivity.letter == 2)
+							else if(GameActivity.letter == 2)
 							{
 								LetterStructureAa.Structure();
 							}
 							//For letter E
-							else if(MainActivity.letter == 3)
+							else if(GameActivity.letter == 3)
 							{
 								LetterStructureE.Structure();
 							}
 							//For letter Raw
-							else if(MainActivity.letter == 4)
+							else if(GameActivity.letter == 4)
 							{
 								LetterStructureRaw.Structure();
 							}
 							//For letter Ko
-							else if(MainActivity.letter == 5)
+							else if(GameActivity.letter == 5)
 							{
 								LetterStructureKo.Structure();
 							}
 							//For letter Bo
-							else if(MainActivity.letter == 6)
+							else if(GameActivity.letter == 6)
 							{
 								LetterStructureBo.Structure();
 							}
 							//For letter TalibaSha
-							else if(MainActivity.letter == 7)
+							else if(GameActivity.letter == 7)
 							{
 								LetterStructureTalibaSha.Structure();
 							}
 							//For letter Lo
-							else if(MainActivity.letter == 8)
+							else if(GameActivity.letter == 8)
 							{
 								LetterStructureLo.Structure();
 							}
 							//For letter Po
-							else if(MainActivity.letter == 9)
+							else if(GameActivity.letter == 9)
 							{
 								LetterStructurePo.Structure();
 							}
 							//For letter Go
-							else if(MainActivity.letter == 10)
+							else if(GameActivity.letter == 10)
 							{
 								LetterStructureGo.Structure();
 							}
 							//For letter Ho
-							else if(MainActivity.letter == 11)
+							else if(GameActivity.letter == 11)
 							{
 								LetterStructureHo.Structure();
 							}
 							//For letter Kho
-							else if(MainActivity.letter == 12)
+							else if(GameActivity.letter == 12)
 							{
 								LetterStructureKho.Structure();
 							}
 							//For letter Cho
-							else if(MainActivity.letter == 13)
+							else if(GameActivity.letter == 13)
 							{
 								LetterStructureCho.Structure();
 							}
 							//For letter No
-							else if(MainActivity.letter == 14)
+							else if(GameActivity.letter == 14)
 							{
 								LetterStructureNo.Structure();
 							}
 							//For letter A
-							else if(MainActivity.letter == 15)
+							else if(GameActivity.letter == 15)
 							{
 								LetterStructureA.Structure();
 							}
 							//For letter Do
-							else if(MainActivity.letter == 16)
+							else if(GameActivity.letter == 16)
 							{
 								LetterStructureDo.Structure();
 							}
 							//For letter U
-							else if(MainActivity.letter == 17)
+							else if(GameActivity.letter == 17)
 							{
 								LetterStructureU.Structure();
 							}
 							//For letter To
-							else if(MainActivity.letter == 18)
+							else if(GameActivity.letter == 18)
 							{
 								LetterStructureTo.Structure();
 							}
 							//For letter Toh
-							else if(MainActivity.letter == 19)
+							else if(GameActivity.letter == 19)
 							{
 								LetterStructureToh.Structure();
 							}
 							//For letter Doh
-							else if(MainActivity.letter == 20)
+							else if(GameActivity.letter == 20)
 							{
 								LetterStructureDoh.Structure();
 							}
 							//For letter Ukar
-							else if(MainActivity.letter == 21)
+							else if(GameActivity.letter == 21)
 							{
 								LetterStructureUkar.Structure();
 							}
 							//For letter Ekar
-							else if(MainActivity.letter == 22)
+							else if(GameActivity.letter == 22)
 							{
 								LetterStructureEkar.Structure();
 							}
 							//For letter Akar
-							else if(MainActivity.letter == 23)
+							else if(GameActivity.letter == 23)
 							{
 								LetterStructureAkar.Structure();
 							}
@@ -191,7 +191,7 @@ public class StructureDrawAnimation
 					});
 			
 				SequenceEntityModifier sequenceMod = new SequenceEntityModifier(scaleModifier,delayMod, loopRotateMod);
-				MainActivity.numberSprites[MainActivity.spriteCounter].registerEntityModifier(sequenceMod);
+				GameActivity.numberSprites[GameActivity.spriteCounter].registerEntityModifier(sequenceMod);
 			}
 			else
 			{
@@ -206,7 +206,7 @@ public class StructureDrawAnimation
 		if(a<5) 
 		{
 		
-		MainActivity.isShaking = true;
+		GameActivity.isShaking = true;
 		MoveModifier moveMod = new MoveModifier((float)0.08, sp.getX(), sp.getX()+x, sp.getY(), sp.getY());
 		DelayModifier delayMod = new DelayModifier((float) 0.01 , new IEntityModifierListener()
 		{
@@ -223,9 +223,9 @@ public class StructureDrawAnimation
 					public void onModifierFinished(IModifier<IEntity> arg0,
 							IEntity arg1)
 					{
-						MainActivity.shakeCounter++;
+						GameActivity.shakeCounter++;
 						sp.setPosition(sp.getX()-20, sp.getY());
-						shake(MainActivity.shakeCounter,sp, 20);
+						shake(GameActivity.shakeCounter,sp, 20);
 					} 
 				});
 		
@@ -235,20 +235,20 @@ public class StructureDrawAnimation
 		else if(a==5)
 		{
 			sp.setPosition(sp.getX()+10, sp.getY());
-			MainActivity.shakeCounter=0;
-			MainActivity.isShaking = false;
+			GameActivity.shakeCounter=0;
+			GameActivity.isShaking = false;
 		}
 	}
 	
 	//Drawing with touch when in the right range
 	public static void Draw(float x, float y)
 	{
-		MainActivity.aCounter++;
-		MainActivity.whiteChalk[MainActivity.aCounter] = new Sprite(x -25, y-30, 
-				MainActivity.mWhiteChalkTextureRegion, MainActivity.vertexBufferObjectManager);
+		GameActivity.aCounter++;
+		GameActivity.whiteChalk[GameActivity.aCounter] = new Sprite(x -25, y-30, 
+				GameActivity.mWhiteChalkTextureRegion, GameActivity.vertexBufferObjectManager);
 //		MainActivity.whiteChalk[MainActivity.aCounter].setZIndex(1);
-		MainActivity.mScene.attachChild(MainActivity.whiteChalk[MainActivity.aCounter]);
-		MainActivity.whiteChalk[MainActivity.aCounter].setScale((float) 0.6);
+		GameActivity.mScene.attachChild(GameActivity.whiteChalk[GameActivity.aCounter]);
+		GameActivity.whiteChalk[GameActivity.aCounter].setScale((float) 0.6);
 		//MainActivity.mScene.sortChildren();
 		//Debug.d("I:"+MainActivity.aCounter); 
 	}

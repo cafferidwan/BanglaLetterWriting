@@ -10,7 +10,7 @@ import org.andengine.opengl.texture.region.TextureRegionFactory;
 import org.andengine.util.FileUtils;
 import android.graphics.BitmapFactory;
 
-import com.example.banglaletterwriting.MainActivity;
+import com.example.banglaletterwriting.GameActivity;
 
 public class ScreenShot 
 {
@@ -18,23 +18,23 @@ public class ScreenShot
 	public ScreenShot()
 	{
 		
-		MainActivity.cursor.setVisible(false);
+		GameActivity.cursor.setVisible(false);
 		//final float time = System.currentTimeMillis();
-		MainActivity.screenCapture.capture(264, 90, MainActivity.viewWidth, MainActivity.viewHeight,FileUtils.getAbsolutePathOnInternalStorage
-				(MainActivity.MainActivityInstace.getApplicationContext(), "/screen"+".jpg") , new IScreenCaptureCallback() 
+		GameActivity.screenCapture.capture(264, 90, GameActivity.viewWidth, GameActivity.viewHeight,FileUtils.getAbsolutePathOnInternalStorage
+				(GameActivity.MainActivityInstace.getApplicationContext(), "/screen"+".jpg") , new IScreenCaptureCallback() 
 		{ 
 			@Override
 			public void onScreenCaptured(final String pFilePath) 
 			{
-				MainActivity.MainActivityInstace.runOnUiThread(new Runnable()
+				GameActivity.MainActivityInstace.runOnUiThread(new Runnable()
 				{
 					@Override
 					public void run() 
 					{
 						//Debug.d("Screenshot: " + pFilePath + " taken!");
-						MainActivity.changeTexture = 1;
+						GameActivity.changeTexture = 1;
 						new setTexture(FileUtils.getAbsolutePathOnInternalStorage
-								(MainActivity.MainActivityInstace.getApplicationContext(), "/screen"+".jpg"));
+								(GameActivity.MainActivityInstace.getApplicationContext(), "/screen"+".jpg"));
 					} 
 				});
 			}
@@ -42,12 +42,12 @@ public class ScreenShot
 			@Override
 			public void onScreenCaptureFailed(final String pFilePath, final Exception pException)
 			{
-				MainActivity.MainActivityInstace.runOnUiThread(new Runnable()
+				GameActivity.MainActivityInstace.runOnUiThread(new Runnable()
 				{
 					@Override
 					public void run() 
 					{
-						MainActivity.changeTexture = 0;
+						GameActivity.changeTexture = 0;
 					}
 				});
 			}
@@ -60,14 +60,14 @@ public class ScreenShot
 		public setTexture(String address)
 		{ 
 			//this.mDrawnPictureRegion = textureRegion;
-			MainActivity.source = new BitmapTextureAtlasSource(
+			GameActivity.source = new BitmapTextureAtlasSource(
 					BitmapFactory.decodeFile(address));
-			MainActivity.texture = new BitmapTextureAtlas(MainActivity.MainActivityInstace.getTextureManager(),
+			GameActivity.texture = new BitmapTextureAtlas(GameActivity.MainActivityInstace.getTextureManager(),
 					1000, 1000);
-			MainActivity.texture.addTextureAtlasSource(MainActivity.source, 0, 0);
-			MainActivity.texture.load();
-			MainActivity.textureRegion = (TextureRegion) TextureRegionFactory.createFromSource(
-					MainActivity.texture, MainActivity.source, 0, 0);
+			GameActivity.texture.addTextureAtlasSource(GameActivity.source, 0, 0);
+			GameActivity.texture.load();
+			GameActivity.textureRegion = (TextureRegion) TextureRegionFactory.createFromSource(
+					GameActivity.texture, GameActivity.source, 0, 0);
 		}
 		
 	}
@@ -75,10 +75,10 @@ public class ScreenShot
 	//calling for screen shot
 	public static void takeScreenShot()
 		{
-		MainActivity.screenCapture = new ScreenCapture();
-			MainActivity.mScene.attachChild(MainActivity.screenCapture);
+		GameActivity.screenCapture = new ScreenCapture();
+			GameActivity.mScene.attachChild(GameActivity.screenCapture);
 			
-			MainActivity.mScene.registerUpdateHandler(new TimerHandler((float)0.5, new ITimerCallback() 
+			GameActivity.mScene.registerUpdateHandler(new TimerHandler((float)0.5, new ITimerCallback() 
 			{
 				@Override
 				public void onTimePassed(TimerHandler pTimerHandler)

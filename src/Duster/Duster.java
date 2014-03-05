@@ -12,7 +12,7 @@ import org.andengine.util.debug.Debug;
 import org.andengine.util.modifier.ease.EaseBounceOut;
 import android.content.Intent;
 
-import com.example.banglaletterwriting.MainActivity;
+import com.example.banglaletterwriting.GameActivity;
 
 public class Duster
 {
@@ -20,8 +20,8 @@ public class Duster
 	//create duster
 	public static void createDuster()
 	{
-		MainActivity.duster = new Sprite(MainActivity.CAMERA_WIDTH/2+100, -400, 
-				MainActivity.mDusterTextureRegion, MainActivity.vertexBufferObjectManager)
+		GameActivity.duster = new Sprite(GameActivity.CAMERA_WIDTH/2+100, -400, 
+				GameActivity.mDusterTextureRegion, GameActivity.vertexBufferObjectManager)
 		{
 			@Override
 			public boolean onAreaTouched(final TouchEvent pSceneTouchEvent,
@@ -32,13 +32,13 @@ public class Duster
 				case TouchEvent.ACTION_DOWN:
 					
 					//if the pop up is active, then disabling the book icon from pressing again
-					if(MainActivity.isPopupActive == false)
+					if(GameActivity.isPopupActive == false)
 					{
 						//when duster icon pressed start finish duster animation 
-						MainActivity.dusterFinishCounter++;
+						GameActivity.dusterFinishCounter++;
 					
-						Debug.d("dustercounter:"+MainActivity.dusterCounter);
-						if(MainActivity.dusterFinishCounter==1)
+						Debug.d("dustercounter:"+GameActivity.dusterCounter);
+						if(GameActivity.dusterFinishCounter==1)
 						{	
 							finishDuster();
 						}
@@ -55,22 +55,22 @@ public class Duster
 				return true;
 			}
 		};
-		MainActivity.duster.setScale((float) 0.5);
-		MainActivity.mScene.registerTouchArea(MainActivity.duster);
-		MainActivity.mScene.attachChild(MainActivity.duster);
-		MainActivity.duster.setZIndex(4);
+		GameActivity.duster.setScale((float) 0.5);
+		GameActivity.mScene.registerTouchArea(GameActivity.duster);
+		GameActivity.mScene.attachChild(GameActivity.duster);
+		GameActivity.duster.setZIndex(4);
 		
 	}
 	
 	//start duster animation
 	public static void startDuster()
 	{
-		Path createDusterPath = new Path(2).to(MainActivity.CAMERA_WIDTH/2+100, -300)
-				.to(MainActivity.CAMERA_WIDTH/2+190,
-				MainActivity.CAMERA_HEIGHT/2);
+		Path createDusterPath = new Path(2).to(GameActivity.CAMERA_WIDTH/2+100, -300)
+				.to(GameActivity.CAMERA_WIDTH/2+190,
+				GameActivity.CAMERA_HEIGHT/2);
 
 	
-		MainActivity.duster.registerEntityModifier(new PathModifier((float) 1.3,
+		GameActivity.duster.registerEntityModifier(new PathModifier((float) 1.3,
 				createDusterPath, null, new IPathModifierListener() 
 		{
 					@Override
@@ -106,9 +106,9 @@ public class Duster
 	//for deleting all the white chalks and fish cursor
 	public static void delete()
 	{
-		for(int i=0; i<=MainActivity.aCounter; i++)
+		for(int i=0; i<=GameActivity.aCounter; i++)
 		{
-			MainActivity.mScene.detachChild(MainActivity.whiteChalk[i]);
+			GameActivity.mScene.detachChild(GameActivity.whiteChalk[i]);
 		}
 //		MainActivity.aCounter = 0 ;
 //		MainActivity.mScene.detachChild(MainActivity.cursor);
@@ -121,25 +121,25 @@ public class Duster
 	public static void finishDuster() 
 	{
 
-		MainActivity.slidingScreen = new Sprite(0, -800, MainActivity.mSlidingScreenTextureRegion, MainActivity.vertexBufferObjectManager);
-		MainActivity.mScene.attachChild(MainActivity.slidingScreen);
+		GameActivity.slidingScreen = new Sprite(0, -800, GameActivity.mSlidingScreenTextureRegion, GameActivity.vertexBufferObjectManager);
+		GameActivity.mScene.attachChild(GameActivity.slidingScreen);
 			
-		Path finishingPath = new Path(2).to(-1200, -150).to(MainActivity.CAMERA_WIDTH  + 10, -150);
+		Path finishingPath = new Path(2).to(-1200, -150).to(GameActivity.CAMERA_WIDTH  + 10, -150);
 
-		MainActivity.slidingScreen.registerEntityModifier(new PathModifier((float) 1.8, finishingPath, null, new IPathModifierListener()
+		GameActivity.slidingScreen.registerEntityModifier(new PathModifier((float) 1.8, finishingPath, null, new IPathModifierListener()
 		{
 				@Override
 				public void onPathStarted(final PathModifier pPathModifier,final IEntity pEntity) 
 				{
 					
 					delete();
-					MainActivity.mScene.clearEntityModifiers();
+					GameActivity.mScene.clearEntityModifiers();
 //					MainActivity.mScene.detachChildren();
-					MainActivity.mScene.detachSelf();
-					MainActivity.mScene.dispose();
+					GameActivity.mScene.detachSelf();
+					GameActivity.mScene.dispose();
 					
 					//Restarting the activity
-					MainActivity.mScene.registerUpdateHandler(new TimerHandler((float)1, new ITimerCallback() 
+					GameActivity.mScene.registerUpdateHandler(new TimerHandler((float)1, new ITimerCallback() 
 					{
 								
 						@Override
@@ -149,13 +149,13 @@ public class Duster
 							
 									
 							//Resetting the stars
-							MainActivity.aCounter=0;
+							GameActivity.aCounter=0;
 							
-							MainActivity.mScene.detachChild(MainActivity.handTutorial);
-							MainActivity.mScene.unregisterUpdateHandler(MainActivity.timer1);
-							MainActivity.MainActivityInstace.finish();
-							MainActivity.MainActivityInstace.startActivity(new Intent(MainActivity.MainActivityInstace.getBaseContext(),
-									MainActivity.class));
+							GameActivity.mScene.detachChild(GameActivity.handTutorial);
+							GameActivity.mScene.unregisterUpdateHandler(GameActivity.timer1);
+							GameActivity.MainActivityInstace.finish();
+							GameActivity.MainActivityInstace.startActivity(new Intent(GameActivity.MainActivityInstace.getBaseContext(),
+									GameActivity.class));
 						}
 					}));
 				}

@@ -11,7 +11,7 @@ import org.andengine.entity.sprite.Sprite;
 import org.andengine.input.touch.TouchEvent;
 import org.andengine.util.modifier.ease.EaseBounceOut;
 
-import com.example.banglaletterwriting.MainActivity;
+import com.example.banglaletterwriting.GameActivity;
 import com.example.banglaletterwriting.NumberSprites;
 import com.example.banglaletterwriting.R;
 
@@ -21,8 +21,8 @@ public class MonkeyTutorial
 	//creating monkeyTutorial
 	public static void monkeyTutorialCreate()
 	{
-		MainActivity.monkeyTutorial = new AnimatedSprite(100, -400, MainActivity.mMonkeyTextureRegion,
-				MainActivity.vertexBufferObjectManager) 
+		GameActivity.monkeyTutorial = new AnimatedSprite(100, -400, GameActivity.mMonkeyTextureRegion,
+				GameActivity.vertexBufferObjectManager) 
 		{
 			@Override
 			public boolean onAreaTouched(final TouchEvent pSceneTouchEvent, final float pTouchAreaLocalX, 
@@ -47,10 +47,10 @@ public class MonkeyTutorial
 		};
 		
 		//animating the monkey tutorial
-		MainActivity.monkeyTutorial.animate(new long[] { 1000, 1000, 1000, 100, 100, 4000,
+		GameActivity.monkeyTutorial.animate(new long[] { 1000, 1000, 1000, 100, 100, 4000,
 				1000, 1000, 100, 100 }, 0, 9, true);
-		MainActivity.mScene.registerTouchArea(MainActivity.monkeyTutorial);
-		MainActivity.mScene.attachChild(MainActivity.monkeyTutorial);
+		GameActivity.mScene.registerTouchArea(GameActivity.monkeyTutorial);
+		GameActivity.mScene.attachChild(GameActivity.monkeyTutorial);
 		
 	}
 
@@ -73,7 +73,7 @@ public class MonkeyTutorial
 
 		Path createMonkeyPath = new Path(2).to(100, -600).to(0, 3);
 
-		MainActivity.monkeyTutorial.registerEntityModifier(new PathModifier(
+		GameActivity.monkeyTutorial.registerEntityModifier(new PathModifier(
 				(float) 4.3, createMonkeyPath, null, new IPathModifierListener() 
 				{
 					@Override
@@ -81,7 +81,7 @@ public class MonkeyTutorial
 							final IEntity pEntity)
 					{
 						// play sound
-						MainActivity.audioPlay = true;
+						GameActivity.audioPlay = true;
 						NumberSprites.playAudio(R.raw.one);
 					}
 
@@ -104,7 +104,7 @@ public class MonkeyTutorial
 							final IEntity pEntity) 
 					{
 						// adding some delay
-						MainActivity.mScene.registerUpdateHandler(new TimerHandler(
+						GameActivity.mScene.registerUpdateHandler(new TimerHandler(
 										(float) 3.0, new ITimerCallback() 
 										{
 											@Override
@@ -138,24 +138,24 @@ public class MonkeyTutorial
 	// monkey tutorial animation draw
 	public static void monkeyTutorialAnimationDraw(float x, float y)
 	{
-		MainActivity.bCounter++;
-		MainActivity.tutorialWhiteChalk[MainActivity.bCounter] = new Sprite(x,y, 
-				MainActivity.mWhiteChalkTextureRegion, MainActivity.vertexBufferObjectManager);
-		MainActivity.tutorialWhiteChalk[MainActivity.bCounter].setZIndex(2);
-		MainActivity.mScene.attachChild(MainActivity.tutorialWhiteChalk[MainActivity.bCounter]);
-		MainActivity.tutorialWhiteChalk[MainActivity.bCounter].setScale((float) 0.6);
-		MainActivity.mScene.sortChildren();
+		GameActivity.bCounter++;
+		GameActivity.tutorialWhiteChalk[GameActivity.bCounter] = new Sprite(x,y, 
+				GameActivity.mWhiteChalkTextureRegion, GameActivity.vertexBufferObjectManager);
+		GameActivity.tutorialWhiteChalk[GameActivity.bCounter].setZIndex(2);
+		GameActivity.mScene.attachChild(GameActivity.tutorialWhiteChalk[GameActivity.bCounter]);
+		GameActivity.tutorialWhiteChalk[GameActivity.bCounter].setScale((float) 0.6);
+		GameActivity.mScene.sortChildren();
 		//Debug.d("bCounter:" + MainActivity.bCounter);
 
 		// removing number sprite during the tutorial
 		for (int a = 1; a < 4; a++)
 		{
-			if (MainActivity.numberSprites[a] != null)
+			if (GameActivity.numberSprites[a] != null)
 			{
-				if (MainActivity.tutorialWhiteChalk[MainActivity.bCounter].getX() >
-				MainActivity.numberSprites[a].getX() + 60)
+				if (GameActivity.tutorialWhiteChalk[GameActivity.bCounter].getX() >
+				GameActivity.numberSprites[a].getX() + 60)
 				{
-					MainActivity.mScene.detachChild(MainActivity.numberSprites[a]);
+					GameActivity.mScene.detachChild(GameActivity.numberSprites[a]);
 				}
 			}
 		}

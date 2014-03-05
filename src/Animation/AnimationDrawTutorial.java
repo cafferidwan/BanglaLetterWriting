@@ -32,7 +32,7 @@ import Letters.LetterStructureToh;
 import Letters.LetterStructureU;
 import Letters.LetterStructureUkar;
 
-import com.example.banglaletterwriting.MainActivity;
+import com.example.banglaletterwriting.GameActivity;
 import com.example.banglaletterwriting.NumberSprites;
 import com.example.banglaletterwriting.R;
 import com.example.banglaletterwriting.StructureDrawAnimation;
@@ -59,15 +59,15 @@ public class AnimationDrawTutorial
 		.to(x1, y1).to(x2, y2);
 		
 		
-		MainActivity.rectangle.registerEntityModifier(new PathModifier((float)2.5, chalkPath, null, new IPathModifierListener()
+		GameActivity.rectangle.registerEntityModifier(new PathModifier((float)2.5, chalkPath, null, new IPathModifierListener()
 		{
 			@Override
 			public void onPathStarted(final PathModifier pPathModifier, final IEntity pEntity) 
 			{
-				MainActivity.monkeyTutorialStart = 1;
+				GameActivity.monkeyTutorialStart = 1;
 				
 				//disabling the touch
-				MainActivity.isActionMoving = false;
+				GameActivity.isActionMoving = false;
 			}
 
 			@Override
@@ -86,7 +86,7 @@ public class AnimationDrawTutorial
 			public void onPathFinished(final PathModifier pPathModifier, final IEntity pEntity) 
 			{
 				
-				MainActivity.monkeyTutorialStart = 0;
+				GameActivity.monkeyTutorialStart = 0;
 				
 				//move to the next step of drawing with chalk
 				AnimationDrawTutorial.animatedChalk2(
@@ -120,12 +120,12 @@ public class AnimationDrawTutorial
 		.to(x5, y5).to(x6, y6).to(x7, y7).to(x8, y8).to(x9, y9)
 		;
 		
-		MainActivity.rectangle.registerEntityModifier(new PathModifier((float)5.0, chalkPath2, null, new IPathModifierListener()
+		GameActivity.rectangle.registerEntityModifier(new PathModifier((float)5.0, chalkPath2, null, new IPathModifierListener()
 		{
 			@Override
 			public void onPathStarted(final PathModifier pPathModifier, final IEntity pEntity) 
 			{
-				MainActivity.monkeyTutorialStart = 1;
+				GameActivity.monkeyTutorialStart = 1;
 			}
 
 			@Override
@@ -143,7 +143,7 @@ public class AnimationDrawTutorial
 			@Override
 			public void onPathFinished(final PathModifier pPathModifier, final IEntity pEntity) 
 			{ 
-				MainActivity.monkeyTutorialStart = 0;
+				GameActivity.monkeyTutorialStart = 0;
 				
 				if(numberOfLines>2)
 				{
@@ -157,10 +157,10 @@ public class AnimationDrawTutorial
 				else
 				{
 					//if it is the first line, only then play the first line animation
-					if(MainActivity.letter==1)
+					if(GameActivity.letter==1)
 					{
 						//after finishing the tutorial remove the chalk draw
-						MainActivity.mScene.registerUpdateHandler(new TimerHandler((float) 1, new ITimerCallback() 
+						GameActivity.mScene.registerUpdateHandler(new TimerHandler((float) 1, new ITimerCallback() 
 						{
 									@Override
 									public void onTimePassed(TimerHandler pTimerHandler)
@@ -172,7 +172,7 @@ public class AnimationDrawTutorial
 					}
 					else
 					{ 
-						MainActivity.mScene.registerUpdateHandler(new TimerHandler((float) 1, new ITimerCallback() 
+						GameActivity.mScene.registerUpdateHandler(new TimerHandler((float) 1, new ITimerCallback() 
 						{
 									@Override
 									public void onTimePassed(TimerHandler pTimerHandler)
@@ -198,12 +198,12 @@ public class AnimationDrawTutorial
 		.to(x1 , y1 ).to(x2, y2).to(x3, y3).to(x4, y4)
 		;
 		
-		MainActivity.rectangle.registerEntityModifier(new PathModifier((float)2.0, chalkPath2, null, new IPathModifierListener()
+		GameActivity.rectangle.registerEntityModifier(new PathModifier((float)2.0, chalkPath2, null, new IPathModifierListener()
 		{
 			@Override
 			public void onPathStarted(final PathModifier pPathModifier, final IEntity pEntity) 
 			{
-				MainActivity.monkeyTutorialStart = 1;
+				GameActivity.monkeyTutorialStart = 1;
 			}
 
 			@Override
@@ -221,7 +221,7 @@ public class AnimationDrawTutorial
 			@Override
 			public void onPathFinished(final PathModifier pPathModifier, final IEntity pEntity) 
 			{ 
-				MainActivity.monkeyTutorialStart = 0;
+				GameActivity.monkeyTutorialStart = 0;
 				
 				if(numberOfLines>3)
 				{
@@ -235,7 +235,7 @@ public class AnimationDrawTutorial
 				else
 				{
 					//after finishing the tutorial remove the chalk draw
-					MainActivity.mScene.registerUpdateHandler(new TimerHandler((float) 1, new ITimerCallback() 
+					GameActivity.mScene.registerUpdateHandler(new TimerHandler((float) 1, new ITimerCallback() 
 					{
 								@Override
 								public void onTimePassed(TimerHandler pTimerHandler)
@@ -259,12 +259,12 @@ public class AnimationDrawTutorial
 		.to(x1 , y1 ).to(x2, y2)
 		;
 		
-		MainActivity.rectangle.registerEntityModifier(new PathModifier((float)2.0, chalkPath2, null, new IPathModifierListener()
+		GameActivity.rectangle.registerEntityModifier(new PathModifier((float)2.0, chalkPath2, null, new IPathModifierListener()
 		{
 			@Override
 			public void onPathStarted(final PathModifier pPathModifier, final IEntity pEntity) 
 			{
-				MainActivity.monkeyTutorialStart = 1;
+				GameActivity.monkeyTutorialStart = 1;
 			}
 
 			@Override
@@ -282,10 +282,10 @@ public class AnimationDrawTutorial
 			@Override
 			public void onPathFinished(final PathModifier pPathModifier, final IEntity pEntity) 
 			{ 
-				MainActivity.monkeyTutorialStart = 0;
+				GameActivity.monkeyTutorialStart = 0;
 				
 				//after finishing the tutorial remove the chalk draw
-				MainActivity.mScene.registerUpdateHandler(new TimerHandler((float) 1, new ITimerCallback() 
+				GameActivity.mScene.registerUpdateHandler(new TimerHandler((float) 1, new ITimerCallback() 
 				{
 							@Override
 							public void onTimePassed(TimerHandler pTimerHandler)
@@ -302,20 +302,20 @@ public class AnimationDrawTutorial
 	// remove the chalk draw during monkey tutorial
 	public static void removeTutorialDraw(int a)
 	{
-		for(int i = 0; i<= MainActivity.bCounter; i++)
+		for(int i = 0; i<= GameActivity.bCounter; i++)
 		{
-			MainActivity.mScene.detachChild(MainActivity.tutorialWhiteChalk[i]);
+			GameActivity.mScene.detachChild(GameActivity.tutorialWhiteChalk[i]);
 		}
-		MainActivity.bCounter = 0;
+		GameActivity.bCounter = 0;
 		
 		//first time call
 		if(a==1)
 		{
 			//play sound
-			MainActivity.audioPlay = true;
+			GameActivity.audioPlay = true;
 			NumberSprites.playAudio(R.raw.one);
 			
-			MainActivity.mScene.registerUpdateHandler(new TimerHandler((float) 3, new ITimerCallback() 
+			GameActivity.mScene.registerUpdateHandler(new TimerHandler((float) 3, new ITimerCallback() 
 			{
 						@Override
 						public void onTimePassed(TimerHandler pTimerHandler)
@@ -331,119 +331,119 @@ public class AnimationDrawTutorial
 		else if(a==2) 
 		{
 			//createNumberSpriteAndCursor(2);
-			MainActivity.isActionMoving = true;
+			GameActivity.isActionMoving = true;
 			
-			if(MainActivity.letter == 1)
+			if(GameActivity.letter == 1)
 			{
 				//create number with cursor
 				LetterStructureMo.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 2)
+			else if(GameActivity.letter == 2)
 			{
 				//create number with cursor
 				LetterStructureAa.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 3)
+			else if(GameActivity.letter == 3)
 			{
 				//create number with cursor
 				LetterStructureE.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 4)
+			else if(GameActivity.letter == 4)
 			{
 				//create number with cursor
 				LetterStructureRaw.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 5)
+			else if(GameActivity.letter == 5)
 			{
 				//create number with cursor
 				LetterStructureKo.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 6)
+			else if(GameActivity.letter == 6)
 			{
 				//create number with cursor
 				LetterStructureBo.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 7)
+			else if(GameActivity.letter == 7)
 			{
 				//create number with cursor
 				LetterStructureTalibaSha.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 8)
+			else if(GameActivity.letter == 8)
 			{
 				//create number with cursor
 				LetterStructureLo.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 9)
+			else if(GameActivity.letter == 9)
 			{
 				//create number with cursor
 				LetterStructurePo.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 10)
+			else if(GameActivity.letter == 10)
 			{
 				//create number with cursor
 				LetterStructureGo.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 11)
+			else if(GameActivity.letter == 11)
 			{
 				//create number with cursor
 				LetterStructureHo.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 12)
+			else if(GameActivity.letter == 12)
 			{
 				//create number with cursor
 				LetterStructureKho.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 13)
+			else if(GameActivity.letter == 13)
 			{
 				//create number with cursor
 				LetterStructureCho.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 14)
+			else if(GameActivity.letter == 14)
 			{
 				//create number with cursor
 				LetterStructureNo.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 15)
+			else if(GameActivity.letter == 15)
 			{
 				//create number with cursor
 				LetterStructureA.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 16)
+			else if(GameActivity.letter == 16)
 			{
 				//create number with cursor
 				LetterStructureDo.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 17)
+			else if(GameActivity.letter == 17)
 			{
 				//create number with cursor
 				LetterStructureU.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 18)
+			else if(GameActivity.letter == 18)
 			{
 				//create number with cursor
 				LetterStructureTo.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 19)
+			else if(GameActivity.letter == 19)
 			{
 				//create number with cursor
 				LetterStructureToh.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 20)
+			else if(GameActivity.letter == 20)
 			{
 				//create number with cursor
 				LetterStructureDoh.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 21)
+			else if(GameActivity.letter == 21)
 			{
 				//create number with cursor
 				LetterStructureUkar.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 22)
+			else if(GameActivity.letter == 22)
 			{
 				//create number with cursor
 				LetterStructureEkar.createNumberSpriteAndCursor();
 			}
-			else if(MainActivity.letter == 23)
+			else if(GameActivity.letter == 23)
 			{
 				//create number with cursor
 				LetterStructureAkar.createNumberSpriteAndCursor();
@@ -456,26 +456,26 @@ public class AnimationDrawTutorial
 	{
 		 
 		//creating the first line of numbers
-		MainActivity.spriteCounterLimit = 4;
-		StructureDrawAnimation.scale(MainActivity.moOutLineX + 70 - 100, MainActivity.moOutLineY - 50, 1);
+		GameActivity.spriteCounterLimit = 4;
+		StructureDrawAnimation.scale(GameActivity.moOutLineX + 70 - 100, GameActivity.moOutLineY - 50, 1);
 				
 		//creating the fish cursor
-		MainActivity.cursor = new AnimatedSprite(MainActivity.moOutLineX, MainActivity.moOutLineY, 
-				MainActivity.mFishTextureRegion, MainActivity.vertexBufferObjectManager);
-		MainActivity.cursor.animate(new long[]{100, 100, 100, 100, 100, 100}, 0, 5, true);
-		MainActivity.cursor.setZIndex(3);
-		MainActivity.mScene.attachChild(MainActivity.cursor);
+		GameActivity.cursor = new AnimatedSprite(GameActivity.moOutLineX, GameActivity.moOutLineY, 
+				GameActivity.mFishTextureRegion, GameActivity.vertexBufferObjectManager);
+		GameActivity.cursor.animate(new long[]{100, 100, 100, 100, 100, 100}, 0, 5, true);
+		GameActivity.cursor.setZIndex(3);
+		GameActivity.mScene.attachChild(GameActivity.cursor);
 				
 		//setting the cursor to top of first number sprite
-		NumberSprites.setCursorPosition(MainActivity.numberSprites[1]);
+		NumberSprites.setCursorPosition(GameActivity.numberSprites[1]);
 				
 		if(a==1)
 		{
 			//go to the next step or move the animated fish 
-			animatedCursor(MainActivity.moOutLineX-10, 
-					MainActivity.moOutLineY-30, 
-					MainActivity.moOutLineX+180, 
-					MainActivity.moOutLineY-30);
+			animatedCursor(GameActivity.moOutLineX-10, 
+					GameActivity.moOutLineY-30, 
+					GameActivity.moOutLineX+180, 
+					GameActivity.moOutLineY-30);
 		}
 		else if(a==2)
 		{
@@ -492,12 +492,12 @@ public class AnimationDrawTutorial
 		.to(x1, y1).to(x2, y2);
 		
 		
-		MainActivity.cursor.registerEntityModifier(new PathModifier((float)2.0, chalkPath, null, new IPathModifierListener()
+		GameActivity.cursor.registerEntityModifier(new PathModifier((float)2.0, chalkPath, null, new IPathModifierListener()
 		{
 			@Override
 			public void onPathStarted(final PathModifier pPathModifier, final IEntity pEntity) 
 			{
-				MainActivity.monkeyTutorialStart = 2;
+				GameActivity.monkeyTutorialStart = 2;
 			}
 
 			@Override
@@ -516,21 +516,21 @@ public class AnimationDrawTutorial
 			public void onPathFinished(final PathModifier pPathModifier, final IEntity pEntity) 
 			{
 				//play sound
-				MainActivity.audioPlay = true;
+				GameActivity.audioPlay = true;
 				NumberSprites.playAudio(R.raw.one);
 				
 				//after moving the cursor/fish with removing the number sprites
-				MainActivity.mScene.registerUpdateHandler(new TimerHandler((float) 3, new ITimerCallback() 
+				GameActivity.mScene.registerUpdateHandler(new TimerHandler((float) 3, new ITimerCallback() 
 				{
 							@Override
 							public void onTimePassed(TimerHandler pTimerHandler)
 							{
 								// TODO Auto-generated method stub
-								MainActivity.monkeyTutorialStart = 0;
-								MainActivity.mScene.detachChild(MainActivity.cursor);
-								MainActivity.mScene.detachChild(MainActivity.numberSprites[4]);
+								GameActivity.monkeyTutorialStart = 0;
+								GameActivity.mScene.detachChild(GameActivity.cursor);
+								GameActivity.mScene.detachChild(GameActivity.numberSprites[4]);
 								
-								MainActivity.spriteCounter = 1;
+								GameActivity.spriteCounter = 1;
 								//remove the draw
 								removeTutorialDraw(2);
 							}
@@ -544,7 +544,7 @@ public class AnimationDrawTutorial
 	public static void animationDrawTimer()
 	{
 		
-		MainActivity.timer1 = new TimerHandler((float) 1.0f/120,true, new ITimerCallback() 
+		GameActivity.timer1 = new TimerHandler((float) 1.0f/120,true, new ITimerCallback() 
 		{
 			@Override
 			public void onTimePassed(TimerHandler pTimerHandler) 
@@ -552,17 +552,17 @@ public class AnimationDrawTutorial
 				// TODO Auto-generated method stub 
 				
 				//starting the first step with monkey tutorial
-				if(MainActivity.monkeyTutorialStart == 1 )
+				if(GameActivity.monkeyTutorialStart == 1 )
 				{
 					//calling for drawing first line of monkey tutorial draw
-					MonkeyTutorial.monkeyTutorialAnimationDraw(MainActivity.rectangle.getX()+20 ,
-							MainActivity.rectangle.getY() +20);
+					MonkeyTutorial.monkeyTutorialAnimationDraw(GameActivity.rectangle.getX()+20 ,
+							GameActivity.rectangle.getY() +20);
 				}
 				//drawing the second time with removing number sprite
-				else if(MainActivity.monkeyTutorialStart == 2 )
+				else if(GameActivity.monkeyTutorialStart == 2 )
 				{
-					MonkeyTutorial.monkeyTutorialAnimationDraw(MainActivity.cursor.getX()+20 ,
-							MainActivity.cursor.getY()+20);
+					MonkeyTutorial.monkeyTutorialAnimationDraw(GameActivity.cursor.getX()+20 ,
+							GameActivity.cursor.getY()+20);
 				}
 				
 			}
