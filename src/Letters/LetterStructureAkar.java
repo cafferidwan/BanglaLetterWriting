@@ -47,10 +47,10 @@ public class LetterStructureAkar
 			GameActivity.posY = GameActivity.numberSprites[1].getY()+GameActivity.numberSprites[1].getHeight()/2-20;
 
 			if( 
-				   GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -65 
+				   GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
 				||GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>80 
-				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>50 
-				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-55 
+				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 					)
 			{ 
 				//set the cursor to the last collided number sprite
@@ -93,10 +93,10 @@ public class LetterStructureAkar
 			GameActivity.posY = GameActivity.numberSprites[2].getY()+GameActivity.numberSprites[2].getHeight()/2-20;
 
 			if(
-					 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -65 
-					 ||GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>60 
-				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>60 
-				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-55 
+					 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
+					 ||GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 						)
 				{
 					
@@ -131,10 +131,10 @@ public class LetterStructureAkar
 				GameActivity.posY = GameActivity.numberSprites[3].getY()+GameActivity.numberSprites[3].getHeight()/2-20;
 				
 				if(
-						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -55 
-						 ||GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>50 
-					|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>60 
-					|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-55 
+						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
+						 ||GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+					|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+					|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 					)
 				{
 					//set the cursor to the last collided number sprite
@@ -175,8 +175,8 @@ public class LetterStructureAkar
 				
 				if(
 						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -160 
-						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>60 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>60 
+						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
 							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-120 
 						)
 				{

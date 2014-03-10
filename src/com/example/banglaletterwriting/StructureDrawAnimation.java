@@ -54,7 +54,7 @@ public class StructureDrawAnimation
 				GameActivity.mScene.attachChild(GameActivity.numberSprites[GameActivity.spriteCounter]);
 				GameActivity.mScene.registerTouchArea(GameActivity.numberSprites[GameActivity.spriteCounter]);
 		
-				ScaleModifier scaleModifier = new ScaleModifier((float) 0.05, 0.1f, 0.3f);
+				ScaleModifier scaleModifier = new ScaleModifier((float) 0.05, 0.1f, 0.25f);
 				LoopEntityModifier loopRotateMod = new LoopEntityModifier( new RotationModifier(4, 0, 360));
 				DelayModifier delayMod = new DelayModifier((float) 0.01, new IEntityModifierListener()
 				{ 
@@ -248,7 +248,7 @@ public class StructureDrawAnimation
 				GameActivity.mWhiteChalkTextureRegion, GameActivity.vertexBufferObjectManager);
 //		MainActivity.whiteChalk[MainActivity.aCounter].setZIndex(1);
 		GameActivity.mScene.attachChild(GameActivity.whiteChalk[GameActivity.aCounter]);
-		GameActivity.whiteChalk[GameActivity.aCounter].setScale((float) 0.6);
+		GameActivity.whiteChalk[GameActivity.aCounter].setScale((float) 0.5);
 		//MainActivity.mScene.sortChildren();
 		//Debug.d("I:"+MainActivity.aCounter); 
 	}

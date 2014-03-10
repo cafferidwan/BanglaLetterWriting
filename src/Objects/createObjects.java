@@ -384,7 +384,7 @@ public class createObjects
 						);
 					
 				
-//				LetterStructurePo.createNumberSpriteAndCursor(); 
+				LetterStructurePo.createNumberSpriteAndCursor(); 
 		}
 		//Outline of letter Go
 		else if(GameActivity.letter == 10)
@@ -427,9 +427,9 @@ public class createObjects
 		{
 			GameActivity.OutLine = new Sprite(GameActivity.moOutLineX-70, GameActivity.moOutLineY-110,
 					GameActivity.mHoOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
-				GameActivity.OutLine.setScale((float)0.8);
+//				GameActivity.OutLine.setScale((float)0.9);
 				GameActivity.mScene.attachChild(GameActivity.OutLine);
-					
+				 	
 				//MonkeyTutorial start 
 				MonkeyTutorial.monkeyTutorialstart(2,
 						GameActivity.moOutLineX - 7,

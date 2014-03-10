@@ -59,10 +59,10 @@ public class LetterStructureMo
 			GameActivity.posY = GameActivity.numberSprites[1].getY()+GameActivity.numberSprites[1].getHeight()/2-20;
 
 			if( 
-				   GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -55 
-				||GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>30 
-				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>30 
-				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-55 
+				   GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
+				||GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 					)
 			{ 
 				//set the cursor to the last collided number sprite
@@ -97,10 +97,10 @@ public class LetterStructureMo
 			GameActivity.posY = GameActivity.numberSprites[2].getY()+GameActivity.numberSprites[2].getHeight()/2-20;
 
 			if(
-					 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -55 
-					 ||GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>30 
-				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>30 
-				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-55 
+					 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
+					 ||GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 						)
 				{
 					
@@ -135,10 +135,10 @@ public class LetterStructureMo
 				GameActivity.posY = GameActivity.numberSprites[3].getY()+GameActivity.numberSprites[3].getHeight()/2-20;
 				
 				if(
-						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -55 
-						 ||GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>30 
-					|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>30 
-					|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-55 
+						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
+						 ||GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+					|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+					|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 					)
 				{
 					//set the cursor to the last collided number sprite
@@ -187,10 +187,10 @@ public class LetterStructureMo
 				GameActivity.posY = GameActivity.numberSprites[5].getY()+GameActivity.numberSprites[5].getHeight()/2-20;
 				
 				if(
-						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -55 
-						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>30 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>50 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-55 
+						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
+						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 						)
 				{
 					//set the cursor to the last collided number sprite
@@ -224,10 +224,10 @@ public class LetterStructureMo
 				GameActivity.posY = GameActivity.numberSprites[6].getY()+GameActivity.numberSprites[6].getHeight()/2-20;
 				
 				if(
-						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -55 
-						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>30 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>50 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-55 
+						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
+						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 						)
 				{
 					
@@ -269,10 +269,10 @@ public class LetterStructureMo
 				GameActivity.posY = GameActivity.numberSprites[7].getY()+GameActivity.numberSprites[7].getHeight()/2-20;
 				
 				if(
-						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -55 
-						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>30 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>50 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-35  
+						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
+						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70  
 						)
 				{
 					
@@ -307,10 +307,10 @@ public class LetterStructureMo
 				GameActivity.posY = GameActivity.numberSprites[8].getY()+GameActivity.numberSprites[8].getHeight()/2-20;
 				
 				if(
-						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -55 
-						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>30 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>30 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-35 
+						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
+						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 						)
 				{
 					
@@ -353,10 +353,10 @@ public class LetterStructureMo
 				GameActivity.posY = GameActivity.numberSprites[9].getY()+GameActivity.numberSprites[9].getHeight()/2-20;
 				
 				if(
-						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -55 
-						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>30 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>30 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-35 
+						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
+						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 						)
 				{
 					
@@ -391,10 +391,10 @@ public class LetterStructureMo
 				GameActivity.posY = GameActivity.numberSprites[10].getY()+GameActivity.numberSprites[10].getHeight()/2-20;
 				
 				if(
-						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -55 
-						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>30 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>30 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-35 
+						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
+						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 						)
 				{
 					
@@ -429,10 +429,10 @@ public class LetterStructureMo
 				GameActivity.posY = GameActivity.numberSprites[11].getY()+GameActivity.numberSprites[11].getHeight()/2-20;
 				
 				if(
-						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -55 
-						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>30 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>30 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-35 
+						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
+						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 						)
 				{
 					
@@ -470,10 +470,10 @@ public class LetterStructureMo
 				//rect(MainActivity.posX, MainActivity.posY);
 				
 				if(
-						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -55 
-						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>40 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>30 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-35 
+						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
+						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 						)
 				{
 					
@@ -515,10 +515,10 @@ public class LetterStructureMo
 				GameActivity.posY = GameActivity.numberSprites[13].getY()+GameActivity.numberSprites[13].getHeight()/2-20;
 				
 				if(
-						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -55 
-						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>50 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>50 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-55 
+						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
+						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 						)
 				{
 					
@@ -553,10 +553,10 @@ public class LetterStructureMo
 				GameActivity.posY = GameActivity.numberSprites[14].getY()+GameActivity.numberSprites[14].getHeight()/2-20;
 				
 				if(
-						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -55 
-						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>30 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>30 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-55 
+						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
+						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-100 
 						)
 				{
 					
@@ -591,10 +591,10 @@ public class LetterStructureMo
 				GameActivity.posY = GameActivity.numberSprites[15].getY()+GameActivity.numberSprites[15].getHeight()/2-20;
 				
 				if(
-						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -55 
-						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>30 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>30 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-55 
+						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
+						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-100 
 						)
 				{
 					
@@ -629,10 +629,10 @@ public class LetterStructureMo
 				GameActivity.posY = GameActivity.numberSprites[16].getY()+GameActivity.numberSprites[16].getHeight()/2-20;
 				
 				if(
-						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -55 
-						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>30 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>30 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-55 
+						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
+						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 						)
 				{
 
@@ -698,7 +698,7 @@ public class LetterStructureMo
 		{
 			GameActivity.spriteCounter++;
 			StructureDrawAnimation.scale(GameActivity.moOutLineX+120 , 
-					70+GameActivity.moOutLineY-70*GameActivity.spriteCounter+1000,
+					70+GameActivity.moOutLineY-80*GameActivity.spriteCounter+1130,
 					GameActivity.spriteCounter);
 		}
 	}
