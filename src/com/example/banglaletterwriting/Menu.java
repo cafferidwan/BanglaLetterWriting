@@ -109,7 +109,7 @@ public class Menu extends SimpleBaseGameActivity implements IOnSceneTouchListene
 		menuScene = new Scene();
 		menuScene.setOnSceneTouchListener(this);
 
-		menuLetterBlockSize = 50;
+		menuLetterBlockSize = 80;
 		
 		menuBackground = new Sprite(0, 0, mMenuBackGroundTextureRegion, vertexBufferObjectManager);
 		menuBackground.setHeight(CAMERA_HEIGHT);

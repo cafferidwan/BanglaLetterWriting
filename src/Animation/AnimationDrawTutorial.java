@@ -47,6 +47,8 @@ public class AnimationDrawTutorial
 			final float xA1, final float yA1, final float xA2, final float yA2,final float xA3, final float yA3,
 			final float xA4, final float yA4, final float xA5,final float yA5, final float xA6, final float yA6,
 			final float xA7, final float yA7, final float xA8, final float yA8, final float xA9, final float yA9,
+			final float xA10, final float yA10, final float xA11, final float yA11,final float xA12, final float yA12,
+			final float xA13, final float yA13,
 			
 			final float xB1, final float yB1, final float xB2, final float yB2, final float xB3, final float yB3,
 			final float xB4, final float yB4, 
@@ -93,7 +95,8 @@ public class AnimationDrawTutorial
 					numberOfLines, 
 					xA1, yA1, xA2, yA2, xA3, yA3, xA4, yA4,
 					xA5, yA5, xA6, yA6, xA7, yA7, xA8, yA8,
-					xA9, yA9, 
+					xA9, yA9, xA10, yA10, xA11, yA11, xA12, 
+					yA12, xA13, yA13,
 					
 					xB1, yB1, xB2, yB2, xB3, yB3,
 					xB4, yB4, 
@@ -108,16 +111,19 @@ public class AnimationDrawTutorial
 			
 			final float x1, final float y1, final float x2, final float y2
 			, final float x3, final float y3, final float x4, final float y4, final float x5, final float y5
-			, final float x6, final float y6, final float x7, final float y7, float x8, float y8, float x9,float y9,
+			, final float x6, final float y6, final float x7, final float y7, float x8, float y8, float x9,float y9
+			, final float x10, final float y10, final float x11, final float y11
+			, final float x12, final float y12, final float x13, final float y13,
 			
 			  final float xB1, final float yB1, final float xB2, final float yB2, final float xB3
 			, final float yB3, final float xB4, final float yB4
 			
 			, final float xC1, final float yC1, final float xC2, final float yC2)
 	{
-		Path chalkPath2 = new Path(9)
-		.to(x1 , y1 ).to(x2, y2).to(x3, y3).to(x4, y4)
-		.to(x5, y5).to(x6, y6).to(x7, y7).to(x8, y8).to(x9, y9)
+		Path chalkPath2 = new Path(13)
+		.to(x1 , y1 ).to(x2, y2).to(x3, y3).to(x4, y4).to(x5, y5)
+		.to(x6, y6).to(x7, y7).to(x8, y8).to(x9, y9).to(x10, y10)
+		.to(x11, y11).to(x12, y12).to(x13, y13)
 		;
 		
 		GameActivity.rectangle.registerEntityModifier(new PathModifier((float)5.0, chalkPath2, null, new IPathModifierListener()

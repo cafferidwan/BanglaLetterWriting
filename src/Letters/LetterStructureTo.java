@@ -477,8 +477,8 @@ public class LetterStructureTo
 		else if(GameActivity.spriteCounterLimit == 12)
 		{
 			GameActivity.spriteCounter++;
-			StructureDrawAnimation.scale(GameActivity.moOutLineX-40*GameActivity.spriteCounter +430 ,
-					GameActivity.moOutLineY-80*GameActivity.spriteCounter+950,
+			StructureDrawAnimation.scale(GameActivity.moOutLineX-30*GameActivity.spriteCounter +310 ,
+					GameActivity.moOutLineY-80*GameActivity.spriteCounter+930,
 					GameActivity.spriteCounter);
 		}
 	}

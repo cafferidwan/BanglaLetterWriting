@@ -103,29 +103,6 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 	//Menu Items
 	public static BitmapTextureAtlas[][] mBitmapTextureAtlasMenuLetters = new BitmapTextureAtlas[50][50];
 	public static ITextureRegion[][] mMenuTextureRegionMenuLetters =  new ITextureRegion[50][50];
-//	public static BitmapTextureAtlas mBitmapTextureAtlasMenuMo,
-//	mBitmapTextureAtlasMenuAa,mBitmapTextureAtlasMenuLo,
-//	mBitmapTextureAtlasMenuKo,mBitmapTextureAtlasMenuTo,
-//	mBitmapTextureAtlasMenuBo,mBitmapTextureAtlasMenuno,
-//	mBitmapTextureAtlasMenuCho,mBitmapTextureAtlasMenuE,
-//	mBitmapTextureAtlasMenuPo,mBitmapTextureAtlasMenuRaw,
-//	mBitmapTextureAtlasMenuSho,mBitmapTextureAtlasMenuDo,
-//	mBitmapTextureAtlasMenuA,mBitmapTextureAtlasMenuDoh,
-//	mBitmapTextureAtlasMenuToh,mBitmapTextureAtlasMenuKho,
-//	mBitmapTextureAtlasMenuU,mBitmapTextureAtlasMenuGo,
-//	mBitmapTextureAtlasMenuHo;
-	
-//	public static ITextureRegion mMenuMoTextureRegion,
-//	mMenuAaTextureRegion, mMenuLoTextureRegion,
-//	mMenuKoTextureRegion, mMenuToTextureRegion,
-//	mMenuBoTextureRegion, mMenuNoTextureRegion,
-//	mMenuChoTextureRegion, mMenuETextureRegion,
-//	mMenuPoTextureRegion, mMenuRawTextureRegion,
-//	mMenuShaTextureRegion, mMenuDoTextureRegion,
-//	mMenuATextureRegion, mMenuDohTextureRegion,
-//	mMenuTohTextureRegion, mMenuKhoTextureRegion,
-//	mMenuUTextureRegion, mMenuGoTextureRegion,
-//	mMenuHoTextureRegion;
 	
 	public static ITextureRegion mbackGroundTextureRegion,
 			mBlackBoardTextureRegion, mSlidingScreenTextureRegion,

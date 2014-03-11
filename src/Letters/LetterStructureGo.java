@@ -54,7 +54,7 @@ public class LetterStructureGo
 					GameActivity.moOutLineY+50*GameActivity.spriteCounter -250,
 					GameActivity.spriteCounter);
 		}
-		else if(GameActivity.spriteCounterLimit == 7)
+		else if(GameActivity.spriteCounterLimit == 6)
 		{
 			GameActivity.spriteCounter++;
 			StructureDrawAnimation.scale(GameActivity.moOutLineX+120 , 
@@ -65,7 +65,14 @@ public class LetterStructureGo
 		{
 			GameActivity.spriteCounter++;
 			StructureDrawAnimation.scale(GameActivity.moOutLineX+120 , 
-					70+GameActivity.moOutLineY+90*GameActivity.spriteCounter-710,
+					70+GameActivity.moOutLineY+90*GameActivity.spriteCounter-680,
+					GameActivity.spriteCounter);
+		}
+		else if(GameActivity.spriteCounterLimit == 11)
+		{
+			GameActivity.spriteCounter++;
+			StructureDrawAnimation.scale(GameActivity.moOutLineX+10*GameActivity.spriteCounter+80 , 
+					70+GameActivity.moOutLineY+10*GameActivity.spriteCounter-220,
 					GameActivity.spriteCounter);
 		}
 	
@@ -155,7 +162,6 @@ public class LetterStructureGo
 		}
 		else if(GameActivity.state==3)
 		{
-			//MainActivity.mScene.detachChild(MainActivity.numberSprites[3]);
 			//creating new line of numbers
 			GameActivity.spriteCounterLimit=4;
 			StructureDrawAnimation.scale(GameActivity.moOutLineX+30,
@@ -203,8 +209,8 @@ public class LetterStructureGo
 		{
 			//creating new line of numbers
 			GameActivity.spriteCounterLimit=5;
-			StructureDrawAnimation.scale(GameActivity.moOutLineX+110,
-					GameActivity.moOutLineY+10, GameActivity.spriteCounter); 
+			StructureDrawAnimation.scale(GameActivity.moOutLineX+130,
+					GameActivity.moOutLineY+40, GameActivity.spriteCounter); 
 
 			GameActivity.state=6;
 		}
@@ -218,8 +224,8 @@ public class LetterStructureGo
 
 			if(
 					 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
-					 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
-						|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+					 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>100 
+						|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>100 
 						|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 					)
 			{
@@ -287,9 +293,7 @@ public class LetterStructureGo
 		}
 		else if(GameActivity.state==8)
 		{
-			//MainActivity.mScene.detachChild(MainActivity.numberSprites[9]);
-			
-			GameActivity.spriteCounterLimit=7;
+			GameActivity.spriteCounterLimit=6;
 			StructureDrawAnimation.scale(GameActivity.moOutLineX+40*GameActivity.spriteCounter -120 ,
 					GameActivity.moOutLineY+50*GameActivity.spriteCounter-370, GameActivity.spriteCounter); 
 			NumberSprites.setCursorPosition(GameActivity.numberSprites[6]);
@@ -331,21 +335,58 @@ public class LetterStructureGo
 				//Move the cursor with touch
 				NumberSprites.setCursorRotation(x, y);
 				
-				remove(7,6,10);
+				remove(6,5,10);
 			} 
 		}
 		else if(GameActivity.state==10)
 		{
 			GameActivity.spriteCounterLimit=9;
 			StructureDrawAnimation.scale(GameActivity.moOutLineX+120,
-					GameActivity.moOutLineY+50*GameActivity.spriteCounter-310, GameActivity.spriteCounter); 
+					GameActivity.moOutLineY+50*GameActivity.spriteCounter-340, GameActivity.spriteCounter); 
 			
 			GameActivity.state=11; 
 			
 		} 
-
 		else if(GameActivity.state==11)
 		{
+			StructureDrawAnimation.Draw(x, y);
+			
+			GameActivity.posX = GameActivity.numberSprites[6].getX()+GameActivity.numberSprites[6].getWidth()/2-20; 
+			GameActivity.posY = GameActivity.numberSprites[6].getY()+GameActivity.numberSprites[6].getHeight()/2-20;
+			
+			if(
+					 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
+					 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+						|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+						|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
+					)
+			{
+				
+				//set the cursor to the last collided number sprite
+				NumberSprites.setCursorPosition(GameActivity.numberSprites[6]);
+				
+				//if out of the area the remove white chalks
+				for(int a=GameActivity.wCounter; a<=GameActivity.aCounter; a++)
+				{
+					GameActivity.mScene.detachChild(GameActivity.whiteChalk[a]);
+					//if wrong and not shaking the shake as wrong signal
+					if(GameActivity.isShaking == false)
+					{
+						StructureDrawAnimation.shake(1, GameActivity.OutLine, 10);
+					}
+				} 
+				
+			} 
+			else
+			{
+				//Move the cursor with touch
+				NumberSprites.setCursorRotation(x, y);
+				
+				remove(7,6,12);
+			}
+		}
+		else if(GameActivity.state==12)
+		{ 
 			StructureDrawAnimation.Draw(x, y);
 			
 			GameActivity.posX = GameActivity.numberSprites[7].getX()+GameActivity.numberSprites[7].getWidth()/2-20; 
@@ -355,7 +396,7 @@ public class LetterStructureGo
 					 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
 					 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
 						|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
-						|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
+						|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-90 
 					)
 			{
 				
@@ -378,12 +419,13 @@ public class LetterStructureGo
 			{
 				//Move the cursor with touch
 				NumberSprites.setCursorRotation(x, y);
-				
-				remove(8,7,12);
+	                
+				remove(8,7,13);
 			}
 		}
-		else if(GameActivity.state==12)
-		{ 
+		
+		else if(GameActivity.state==13)
+		{
 			StructureDrawAnimation.Draw(x, y);
 			
 			GameActivity.posX = GameActivity.numberSprites[8].getX()+GameActivity.numberSprites[8].getWidth()/2-20; 
@@ -393,7 +435,7 @@ public class LetterStructureGo
 					 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
 					 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
 						|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
-						|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-90 
+						|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 					)
 			{
 				
@@ -416,54 +458,17 @@ public class LetterStructureGo
 			{
 				//Move the cursor with touch
 				NumberSprites.setCursorRotation(x, y);
-	                
-				remove(9,8,13);
-			}
-		}
-		
-		else if(GameActivity.state==13)
-		{
-			StructureDrawAnimation.Draw(x, y);
-			
-			GameActivity.posX = GameActivity.numberSprites[9].getX()+GameActivity.numberSprites[9].getWidth()/2-20; 
-			GameActivity.posY = GameActivity.numberSprites[9].getY()+GameActivity.numberSprites[9].getHeight()/2-20;
-			
-			if(
-					 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
-					 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
-						|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
-						|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
-					)
-			{
 				
-				//set the cursor to the last collided number sprite
-				NumberSprites.setCursorPosition(GameActivity.numberSprites[9]);
-				
-				//if out of the area the remove white chalks
-				for(int a=GameActivity.wCounter; a<=GameActivity.aCounter; a++)
-				{
-					GameActivity.mScene.detachChild(GameActivity.whiteChalk[a]);
-					//if wrong and not shaking the shake as wrong signal
-					if(GameActivity.isShaking == false)
-					{
-						StructureDrawAnimation.shake(1, GameActivity.OutLine, 10);
-					}
-				} 
-				
-			} 
-			else
-			{
-				//Move the cursor with touch
-				NumberSprites.setCursorRotation(x, y);
-				
-				remove(9,9,14);
+				remove(9,8,14);
 			}
 		}
 		else if(GameActivity.state==14)
 		{
- 			GameActivity.spriteCounterLimit=13;
-			StructureDrawAnimation.scale(GameActivity.moOutLineX+150 ,  
-					GameActivity.moOutLineY-30, GameActivity.spriteCounter); 
+			GameActivity.mScene.detachChild(GameActivity.numberSprites[9]);
+			
+ 			GameActivity.spriteCounterLimit=11;
+			StructureDrawAnimation.scale(GameActivity.moOutLineX+10*GameActivity.spriteCounter+10 ,  
+					GameActivity.moOutLineY-40, GameActivity.spriteCounter); 
 			
 			NumberSprites.setCursorPosition(GameActivity.numberSprites[10]);
 			
@@ -471,7 +476,7 @@ public class LetterStructureGo
 		}
 		else if(GameActivity.state==15)
 		{
-			
+
 			StructureDrawAnimation.Draw(x, y);
 			
 			GameActivity.posX = GameActivity.numberSprites[10].getX()+GameActivity.numberSprites[10].getWidth()/2-20; 
@@ -505,7 +510,7 @@ public class LetterStructureGo
 				//Move the cursor with touch
 				NumberSprites.setCursorRotation(x, y);
 	                
-				remove(10,10,16);
+				remove(11,10,16);
 			}
 		} 
 	}
@@ -517,9 +522,9 @@ public class LetterStructureGo
 		if(GameActivity.whiteChalk[GameActivity.aCounter].collidesWith(GameActivity.numberSprites[collisionSprite]))
 		{
 			//removing when it is in the last state
-			if(collisionSprite == 10)
+			if(collisionSprite == 11)
 			{ 
-				GameActivity.mScene.detachChild(GameActivity.numberSprites[10]);
+				GameActivity.mScene.detachChild(GameActivity.numberSprites[11]);
 				
 				//trigger for taking screen shot
 				GameActivity.screenShotCounter = 1;

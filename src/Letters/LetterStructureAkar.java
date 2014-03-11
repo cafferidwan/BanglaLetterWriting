@@ -48,7 +48,7 @@ public class LetterStructureAkar
 
 			if( 
 				   GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
-				||GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>80 
+				||GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>100 
 				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
 				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 					)
@@ -200,10 +200,93 @@ public class LetterStructureAkar
 					//Move the cursor with touch
 					NumberSprites.setCursorRotation(x, y);
 					
-					remove(5,4,36);
+					remove(5,4,6);
 				}
 			}
-
+			else if(GameActivity.state==6)
+			{
+				//creating new line of numbers
+				GameActivity.spriteCounterLimit=7;
+				StructureDrawAnimation.scale(GameActivity.moOutLineX +110,
+						GameActivity.moOutLineY+80, GameActivity.spriteCounter); 
+				GameActivity.state=7;
+			}
+			else if(GameActivity.state==7)
+			{
+				StructureDrawAnimation.Draw(x, y);
+				
+				GameActivity.posX = GameActivity.numberSprites[5].getX()+GameActivity.numberSprites[5].getWidth()/2-20; 
+				GameActivity.posY = GameActivity.numberSprites[5].getY()+GameActivity.numberSprites[5].getHeight()/2-20;
+				
+				if(
+						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -160 
+						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-120 
+						)
+				{
+					//set the cursor to the last collided number sprite
+					NumberSprites.setCursorPosition(GameActivity.numberSprites[5]);
+					
+					//if out of the area the remove white chalks
+					for(int a=GameActivity.wCounter; a<=GameActivity.aCounter; a++)
+					{
+						GameActivity.mScene.detachChild(GameActivity.whiteChalk[a]);
+						//if wrong and not shaking the shake as wrong signal
+						if(GameActivity.isShaking == false)
+						{
+							StructureDrawAnimation.shake(1, GameActivity.OutLine, 10);
+						}
+					}
+					
+				} 
+				else
+				{
+					//Move the cursor with touch
+					NumberSprites.setCursorRotation(x, y);
+					
+					remove(6,5,8);
+				}
+			}
+			else if(GameActivity.state==8)
+			{
+				StructureDrawAnimation.Draw(x, y);
+				
+				GameActivity.posX = GameActivity.numberSprites[6].getX()+GameActivity.numberSprites[6].getWidth()/2-20; 
+				GameActivity.posY = GameActivity.numberSprites[6].getY()+GameActivity.numberSprites[6].getHeight()/2-20;
+				
+				if(
+						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -160 
+						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-120 
+						)
+				{
+					//set the cursor to the last collided number sprite
+					NumberSprites.setCursorPosition(GameActivity.numberSprites[6]);
+					
+					//if out of the area the remove white chalks
+					for(int a=GameActivity.wCounter; a<=GameActivity.aCounter; a++)
+					{
+						GameActivity.mScene.detachChild(GameActivity.whiteChalk[a]);
+						//if wrong and not shaking the shake as wrong signal
+						if(GameActivity.isShaking == false)
+						{
+							StructureDrawAnimation.shake(1, GameActivity.OutLine, 10);
+						}
+					}
+					
+				} 
+				else
+				{
+					//Move the cursor with touch
+					NumberSprites.setCursorRotation(x, y);
+					
+					remove(7,6,36);
+				}
+			}
+		
+		
 	}
 		
 		
@@ -224,7 +307,13 @@ public class LetterStructureAkar
 					GameActivity.moOutLineY +40*GameActivity.spriteCounter - 60,
 					GameActivity.spriteCounter);
 		}
-		
+		else if(GameActivity.spriteCounterLimit == 7)
+		{
+			GameActivity.spriteCounter++;
+			StructureDrawAnimation.scale(GameActivity.moOutLineX+10*GameActivity.spriteCounter ,
+					GameActivity.moOutLineY +10*GameActivity.spriteCounter + 85,
+					GameActivity.spriteCounter);
+		}
 		
 	}
 	
@@ -236,9 +325,9 @@ public class LetterStructureAkar
 		if(GameActivity.whiteChalk[GameActivity.aCounter].collidesWith(GameActivity.numberSprites[collisionSprite]))
 		{
 			//removing when it is in the last state
-			if(collisionSprite == 5)
+			if(collisionSprite == 7)
 			{ 
-				GameActivity.mScene.detachChild(GameActivity.numberSprites[5]);
+				GameActivity.mScene.detachChild(GameActivity.numberSprites[7]);
 				
 				//trigger for taking screen shot
 				GameActivity.screenShotCounter = 1;

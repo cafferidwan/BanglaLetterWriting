@@ -685,7 +685,7 @@ public class LetterStructureU
 		{
 			GameActivity.spriteCounter++;
 			StructureDrawAnimation.scale(GameActivity.moOutLineX-90*GameActivity.spriteCounter+1310 , 
-					70+GameActivity.moOutLineY-30*GameActivity.spriteCounter+290,
+					70+GameActivity.moOutLineY-50*GameActivity.spriteCounter+560,
 					GameActivity.spriteCounter);
 		}
 	}

@@ -444,7 +444,7 @@ public class LetterStructureTalibaSha
 			if(
 					 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
 					 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
-						|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>100 
+						|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>150 
 						|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
 					)
 			{

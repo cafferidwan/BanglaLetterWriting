@@ -63,6 +63,8 @@ public class MonkeyTutorial
 			final float x1, final float y1, final float x2, final float y2,final float x3, final float y3,
 			final float x4, final float y4, final float x5,final float y5, final float x6, final float y6,
 			final float x7, final float y7, final float x8, final float y8, final float x9, final float y9,
+			final float x10, final float y10, final float x11, final float y11,final float x12, final float y12,
+			final float x13, final float y13,
 			
 			final float xB1, final float yB1, final float xB2, final float yB2,final float xB3, final float yB3,
 			final float xB4, final float yB4,
@@ -120,7 +122,8 @@ public class MonkeyTutorial
 														
 														x1, y1, x2, y2, x3, y3, x4, y4,
 														x5, y5, x6, y6, x7, y7, x8, y8,
-														x9, y9,
+														x9, y9, x10, y10, x11, y11, x12, 
+														y12, x13, y13,
 														
 														xB1, yB1, xB2, yB2, xB3, yB3,
 														xB4, yB4,
