@@ -39,6 +39,21 @@ import com.example.banglaletterwriting.StructureDrawAnimation;
 
 public class AnimationDrawTutorial 
 {
+	
+	public static double animatedChalk1Time = 2.5, 
+						 animatedChalk2Time = 5.0,
+						 animatedChalk3Time = 2.0, 
+						 animatedChalk4Time = 4.0; 
+	
+	public static void setAnimatedChalkTime(double time1, double time2, double time3, double time4)
+	{
+		AnimationDrawTutorial.animatedChalk1Time = time1;
+		AnimationDrawTutorial.animatedChalk2Time = time2;
+		AnimationDrawTutorial.animatedChalk3Time = time3;
+		AnimationDrawTutorial.animatedChalk4Time = time4;
+	}
+	
+	
 	//animation for drawing with chalk during monkey tutorial
 	public static void animatedChalk1(final int numberOfLines, 
 			
@@ -61,7 +76,7 @@ public class AnimationDrawTutorial
 		.to(x1, y1).to(x2, y2);
 		
 		
-		GameActivity.rectangle.registerEntityModifier(new PathModifier((float)2.5, chalkPath, null, new IPathModifierListener()
+		GameActivity.rectangle.registerEntityModifier(new PathModifier((float)animatedChalk1Time, chalkPath, null, new IPathModifierListener()
 		{
 			@Override
 			public void onPathStarted(final PathModifier pPathModifier, final IEntity pEntity) 
@@ -126,7 +141,7 @@ public class AnimationDrawTutorial
 		.to(x11, y11).to(x12, y12).to(x13, y13)
 		;
 		
-		GameActivity.rectangle.registerEntityModifier(new PathModifier((float)5.0, chalkPath2, null, new IPathModifierListener()
+		GameActivity.rectangle.registerEntityModifier(new PathModifier((float)animatedChalk2Time, chalkPath2, null, new IPathModifierListener()
 		{
 			@Override
 			public void onPathStarted(final PathModifier pPathModifier, final IEntity pEntity) 
@@ -204,7 +219,7 @@ public class AnimationDrawTutorial
 		.to(x1 , y1 ).to(x2, y2).to(x3, y3).to(x4, y4)
 		;
 		
-		GameActivity.rectangle.registerEntityModifier(new PathModifier((float)2.0, chalkPath2, null, new IPathModifierListener()
+		GameActivity.rectangle.registerEntityModifier(new PathModifier((float)animatedChalk3Time, chalkPath2, null, new IPathModifierListener()
 		{
 			@Override
 			public void onPathStarted(final PathModifier pPathModifier, final IEntity pEntity) 
@@ -265,7 +280,7 @@ public class AnimationDrawTutorial
 		.to(x1 , y1 ).to(x2, y2)
 		;
 		
-		GameActivity.rectangle.registerEntityModifier(new PathModifier((float)2.0, chalkPath2, null, new IPathModifierListener()
+		GameActivity.rectangle.registerEntityModifier(new PathModifier((float)animatedChalk4Time, chalkPath2, null, new IPathModifierListener()
 		{
 			@Override
 			public void onPathStarted(final PathModifier pPathModifier, final IEntity pEntity) 

@@ -2,7 +2,10 @@ package Objects;
 
 import org.andengine.entity.primitive.Rectangle;
 import org.andengine.entity.sprite.Sprite;
+import org.andengine.input.touch.TouchEvent;
 import org.andengine.util.color.Color;
+
+import Animation.AnimationDrawTutorial;
 import Animation.MonkeyTutorial;
 import Duster.Duster;
 import Letters.LetterStructureA;
@@ -25,8 +28,12 @@ import Letters.LetterStructureTo;
 import Letters.LetterStructureToh;
 import Letters.LetterStructureU;
 import Letters.LetterStructureUkar;
+import Menu.MainScene;
+
+import android.content.Intent;
 
 import com.example.banglaletterwriting.GameActivity;
+import com.example.banglaletterwriting.Menu;
 
 public class createObjects 
 {
@@ -46,6 +53,43 @@ public class createObjects
 		GameActivity.blackBoard.setWidth((float) (GameActivity.blackBoard.getWidth() * 1.2));
 		GameActivity.mScene.attachChild(GameActivity.blackBoard);
 		
+		
+		GameActivity.homeButton = new Sprite(GameActivity.moOutLineX + 370, GameActivity.moOutLineY -80,
+				GameActivity.mHomeButtoTextureRegion, GameActivity.vertexBufferObjectManager)
+		{
+			@Override
+			public boolean onAreaTouched(final TouchEvent pSceneTouchEvent, final float pTouchAreaLocalX, final float pTouchAreaLocalY)
+			{
+				switch (pSceneTouchEvent.getAction()) 
+				{
+				case TouchEvent.ACTION_DOWN:
+					
+					GameActivity.MainActivityInstace.finish();
+					GameActivity.MainActivityInstace.startActivity(new Intent(
+							GameActivity.MainActivityInstace.getBaseContext(), Menu.class));
+					
+					
+				break;
+				case TouchEvent.ACTION_UP:
+					
+
+				break;
+				case TouchEvent.ACTION_MOVE:
+					
+
+				break;
+				}
+
+				return true;
+			}
+	
+		};
+//		GameActivity.homeButton.setHeight((float) (GameActivity.homeButton.getHeight() * 1.5));
+//		GameActivity.homeButton.setWidth((float) (GameActivity.homeButton.getWidth() * 1.2));
+		GameActivity.homeButton.setScale((float) 0.6);
+		GameActivity.mScene.registerTouchArea(GameActivity.homeButton);
+		GameActivity.mScene.attachChild(GameActivity.homeButton);
+		
 
 		//Rectangle for drawing during tutorial
 		GameActivity.rectangle = new Rectangle(10, 10, 40, 40, GameActivity.vertexBufferObjectManager);
@@ -56,7 +100,7 @@ public class createObjects
 		GameActivity.rect = new Rectangle(0, 0, 40, 40, GameActivity.vertexBufferObjectManager);
 		GameActivity.mScene.attachChild(GameActivity.rect);
 		GameActivity.rect.setColor(Color.RED);
-//		GameActivity.rect.setVisible(false);
+		GameActivity.rect.setVisible(false);
 		
 		//MonkeyTutorial Create
 		MonkeyTutorial.monkeyTutorialCreate();
@@ -71,7 +115,10 @@ public class createObjects
 					GameActivity.mMoOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 			GameActivity.mScene.attachChild(GameActivity.OutLine);
 			
-//			MonkeyTutorial start 
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(2.5, 5, 2, 4);
+			
+			//MonkeyTutorial start 
 			MonkeyTutorial.monkeyTutorialstart(2,
 					GameActivity.moOutLineX - 30,
 					GameActivity.moOutLineY - 30,
@@ -110,6 +157,9 @@ public class createObjects
 					GameActivity.mAaOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 			GameActivity.OutLine.setScale((float)0.5);
 			GameActivity.mScene.attachChild(GameActivity.OutLine);
+			
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(2.5, 5, 2, 1);
 			
 			//MonkeyTutorial start 
 			MonkeyTutorial.monkeyTutorialstart(4,
@@ -152,6 +202,9 @@ public class createObjects
 			GameActivity.OutLine.setScale((float)0.8);
 			GameActivity.mScene.attachChild(GameActivity.OutLine);
 			
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(2.5, 5, 2, 4);
+			
 			//MonkeyTutorial start 
 			MonkeyTutorial.monkeyTutorialstart(3,
 					GameActivity.moOutLineX - 9,
@@ -190,6 +243,9 @@ public class createObjects
 					GameActivity.mRawOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 			GameActivity.OutLine.setScale((float)0.9);
 			GameActivity.mScene.attachChild(GameActivity.OutLine);
+			
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(2.5, 5, 0.8, 4);
 			
 //			MonkeyTutorial start 
 			MonkeyTutorial.monkeyTutorialstart(3,
@@ -232,6 +288,9 @@ public class createObjects
 			GameActivity.OutLine.setScale((float)0.9);
 			GameActivity.mScene.attachChild(GameActivity.OutLine);
 			
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(2.5, 5, 2, 0.5);
+			
 			//MonkeyTutorial start 
 			MonkeyTutorial.monkeyTutorialstart(4,
 					GameActivity.moOutLineX - 23,
@@ -271,6 +330,9 @@ public class createObjects
 					GameActivity.mBoOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 			GameActivity.OutLine.setScale((float)0.9);
 			GameActivity.mScene.attachChild(GameActivity.OutLine);
+			
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(2.5, 5, 2, 4);
 			
 			//MonkeyTutorial start 
 			MonkeyTutorial.monkeyTutorialstart(2,
@@ -312,6 +374,9 @@ public class createObjects
 					GameActivity.mTalibaShaOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 				GameActivity.OutLine.setScale((float)0.9);
 				GameActivity.mScene.attachChild(GameActivity.OutLine);
+				
+				//set the animation time
+				AnimationDrawTutorial.setAnimatedChalkTime(1, 5, 2, 0.4);
 					
 				//MonkeyTutorial start 
 				MonkeyTutorial.monkeyTutorialstart(4,
@@ -352,6 +417,9 @@ public class createObjects
 					GameActivity.mLoOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 				GameActivity.OutLine.setScale((float)0.9);
 				GameActivity.mScene.attachChild(GameActivity.OutLine);
+				
+				//set the animation time
+				AnimationDrawTutorial.setAnimatedChalkTime(2.5, 5, 2, 4);
 					
 				//MonkeyTutorial start 
 				MonkeyTutorial.monkeyTutorialstart(3,
@@ -365,16 +433,16 @@ public class createObjects
 						GameActivity.moOutLineX+51, GameActivity.moOutLineY+84,
 						GameActivity.moOutLineX+70, GameActivity.moOutLineY+98,
 						GameActivity.moOutLineX+65, GameActivity.moOutLineY+122,
-						GameActivity.moOutLineX+25, GameActivity.moOutLineY+120, 
+						GameActivity.moOutLineX+25, GameActivity.moOutLineY+120,
 						GameActivity.moOutLineX-6, GameActivity.moOutLineY+79,
+						GameActivity.moOutLineX+5, GameActivity.moOutLineY+38, 
 						GameActivity.moOutLineX+34, GameActivity.moOutLineY+20,
 						GameActivity.moOutLineX+92, GameActivity.moOutLineY+46,
 						GameActivity.moOutLineX+125, GameActivity.moOutLineY+21,
 						GameActivity.moOutLineX+164, GameActivity.moOutLineY+41,
 						GameActivity.moOutLineX+164, GameActivity.moOutLineY+41,
-						GameActivity.moOutLineX+164, GameActivity.moOutLineY+41, 
+					
 						 
-						
 						GameActivity.moOutLineX+164, GameActivity.moOutLineY-25, 
 						GameActivity.moOutLineX+164, GameActivity.moOutLineY+147, 
 						GameActivity.moOutLineX+164, GameActivity.moOutLineY+203,
@@ -394,34 +462,41 @@ public class createObjects
 				GameActivity.OutLine.setScale((float)0.9);
 				GameActivity.mScene.attachChild(GameActivity.OutLine);
 					
+				//set the animation time
+				AnimationDrawTutorial.setAnimatedChalkTime(1, 2, 1.5, 2);
+				
 				//MonkeyTutorial start 
-//				MonkeyTutorial.monkeyTutorialstart(4,
-//						GameActivity.moOutLineX - 20,
-//						GameActivity.moOutLineY + 47, 
-//						GameActivity.moOutLineX + 31,
-//						GameActivity.moOutLineY + 59,
-//						
-//						GameActivity.moOutLineX+31,GameActivity.moOutLineY+59,
-//						GameActivity.moOutLineX+46, GameActivity.moOutLineY+84, 
-//						GameActivity.moOutLineX+26, GameActivity.moOutLineY+114,
-//						GameActivity.moOutLineX+67, GameActivity.moOutLineY+68,
-//						GameActivity.moOutLineX+92, GameActivity.moOutLineY+46,
-//						GameActivity.moOutLineX+114, GameActivity.moOutLineY+23,
-//						GameActivity.moOutLineX+114, GameActivity.moOutLineY+23,
-//						GameActivity.moOutLineX+114, GameActivity.moOutLineY+23,
-//						GameActivity.moOutLineX+114, GameActivity.moOutLineY+23, 
-//						
-//						GameActivity.moOutLineX-20, GameActivity.moOutLineY+47, 
-//						GameActivity.moOutLineX+52, GameActivity.moOutLineY-11, 
-//						GameActivity.moOutLineX+152, GameActivity.moOutLineY+64,
-//						GameActivity.moOutLineX+152, GameActivity.moOutLineY+64,
-//						
-//						GameActivity.moOutLineX+159, GameActivity.moOutLineY-46,
-//						GameActivity.moOutLineX+159, GameActivity.moOutLineY+207
-//						);
+				MonkeyTutorial.monkeyTutorialstart(4,
+						GameActivity.moOutLineX - 20,
+						GameActivity.moOutLineY + 47, 
+						GameActivity.moOutLineX + 31,
+						GameActivity.moOutLineY + 59,
+						
+						GameActivity.moOutLineX+31,GameActivity.moOutLineY+59,
+						GameActivity.moOutLineX+46, GameActivity.moOutLineY+84, 
+						GameActivity.moOutLineX+26, GameActivity.moOutLineY+114,
+						GameActivity.moOutLineX+67, GameActivity.moOutLineY+68,
+						GameActivity.moOutLineX+92, GameActivity.moOutLineY+46,
+						GameActivity.moOutLineX+114, GameActivity.moOutLineY+23,
+						GameActivity.moOutLineX+114, GameActivity.moOutLineY+23,
+						GameActivity.moOutLineX+114, GameActivity.moOutLineY+23,
+						GameActivity.moOutLineX+114, GameActivity.moOutLineY+23, 
+						GameActivity.moOutLineX+114, GameActivity.moOutLineY+23,
+						GameActivity.moOutLineX+114, GameActivity.moOutLineY+23,
+						GameActivity.moOutLineX+114, GameActivity.moOutLineY+23,
+						GameActivity.moOutLineX+114, GameActivity.moOutLineY+23, 
+						
+						GameActivity.moOutLineX-20, GameActivity.moOutLineY+47, 
+						GameActivity.moOutLineX+52, GameActivity.moOutLineY-11, 
+						GameActivity.moOutLineX+152, GameActivity.moOutLineY+64,
+						GameActivity.moOutLineX+152, GameActivity.moOutLineY+64,
+						
+						GameActivity.moOutLineX+159, GameActivity.moOutLineY-46,
+						GameActivity.moOutLineX+159, GameActivity.moOutLineY+207
+						);
 					
 				
-				LetterStructurePo.createNumberSpriteAndCursor(); 
+//				LetterStructurePo.createNumberSpriteAndCursor(); 
 		}
 		//Outline of letter Go
 		else if(GameActivity.letter == 10)
@@ -431,31 +506,38 @@ public class createObjects
 				GameActivity.OutLine.setScale((float)0.9);
 				GameActivity.mScene.attachChild(GameActivity.OutLine);
 					
+				//set the animation time
+				AnimationDrawTutorial.setAnimatedChalkTime(1.5, 3, 2, 0.5);
+				
 				//MonkeyTutorial start 
-//				MonkeyTutorial.monkeyTutorialstart(4,
-//						GameActivity.moOutLineX + 25,
-//						GameActivity.moOutLineY + 136,
-//						GameActivity.moOutLineX + 75,
-//						GameActivity.moOutLineY + 55,
-//
-//						GameActivity.moOutLineX+75, GameActivity.moOutLineY+55,
-//						GameActivity.moOutLineX-18, GameActivity.moOutLineY+52, 
-//						GameActivity.moOutLineX+4, GameActivity.moOutLineY+1,
-//						GameActivity.moOutLineX+40, GameActivity.moOutLineY-15,
-//						GameActivity.moOutLineX+65, GameActivity.moOutLineY-15,
-//						GameActivity.moOutLineX+93, GameActivity.moOutLineY-2,
-//						GameActivity.moOutLineX+136, GameActivity.moOutLineY+66,
-//						GameActivity.moOutLineX+136, GameActivity.moOutLineY+66,
-//						GameActivity.moOutLineX+136, GameActivity.moOutLineY+66, 
-//						
-//						GameActivity.moOutLineX+142, GameActivity.moOutLineY-48, 
-//						GameActivity.moOutLineX+142, GameActivity.moOutLineY+208, 
-//						GameActivity.moOutLineX+142, GameActivity.moOutLineY+208,
-//						GameActivity.moOutLineX+142, GameActivity.moOutLineY+208,
-//						
-//						GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
-//						GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
-//						); 
+				MonkeyTutorial.monkeyTutorialstart(4,
+						GameActivity.moOutLineX + 25,
+						GameActivity.moOutLineY + 136,
+						GameActivity.moOutLineX + 75,
+						GameActivity.moOutLineY + 55,
+
+						GameActivity.moOutLineX+75, GameActivity.moOutLineY+55,
+						GameActivity.moOutLineX-18, GameActivity.moOutLineY+52, 
+						GameActivity.moOutLineX+4, GameActivity.moOutLineY+1,
+						GameActivity.moOutLineX+40, GameActivity.moOutLineY-15,
+						GameActivity.moOutLineX+65, GameActivity.moOutLineY-15,
+						GameActivity.moOutLineX+93, GameActivity.moOutLineY-2,
+						GameActivity.moOutLineX+136, GameActivity.moOutLineY+66,
+						GameActivity.moOutLineX+136, GameActivity.moOutLineY+66,
+						GameActivity.moOutLineX+136, GameActivity.moOutLineY+66,
+						GameActivity.moOutLineX+136, GameActivity.moOutLineY+66,
+						GameActivity.moOutLineX+136, GameActivity.moOutLineY+66,
+						GameActivity.moOutLineX+136, GameActivity.moOutLineY+66,
+						GameActivity.moOutLineX+136, GameActivity.moOutLineY+66,
+						
+						GameActivity.moOutLineX+142, GameActivity.moOutLineY-48, 
+						GameActivity.moOutLineX+142, GameActivity.moOutLineY+208, 
+						GameActivity.moOutLineX+142, GameActivity.moOutLineY+208,
+						GameActivity.moOutLineX+142, GameActivity.moOutLineY+208,
+						
+						GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
+						GameActivity.moOutLineX+175, GameActivity.moOutLineY-20
+						); 
 					
 //				LetterStructureGo.createNumberSpriteAndCursor(); 
 		}
@@ -466,72 +548,84 @@ public class createObjects
 					GameActivity.mHoOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 //				GameActivity.OutLine.setScale((float)0.9);
 				GameActivity.mScene.attachChild(GameActivity.OutLine);
+				
+				//set the animation time
+				AnimationDrawTutorial.setAnimatedChalkTime(2.5, 5, 2, 4);
 				 	
 				//MonkeyTutorial start 
-//				MonkeyTutorial.monkeyTutorialstart(2,
-//						GameActivity.moOutLineX - 7,
-//						GameActivity.moOutLineY - 20,
-//						GameActivity.moOutLineX + 168,
-//						GameActivity.moOutLineY - 20,
-//
-//						GameActivity.moOutLineX+51, GameActivity.moOutLineY+37,
-//						GameActivity.moOutLineX+75, GameActivity.moOutLineY+11, 
-//						GameActivity.moOutLineX+111, GameActivity.moOutLineY+19,
-//						GameActivity.moOutLineX+130, GameActivity.moOutLineY+45,
-//						GameActivity.moOutLineX+111, GameActivity.moOutLineY+89,
-//						GameActivity.moOutLineX+73, GameActivity.moOutLineY+99,
-//						GameActivity.moOutLineX+38, GameActivity.moOutLineY+98,
-//						GameActivity.moOutLineX+91, GameActivity.moOutLineY+127,
-//						GameActivity.moOutLineX+158, GameActivity.moOutLineY+178, 
-//						
-//						//no need
-//						GameActivity.moOutLineX+142, GameActivity.moOutLineY-48, 
-//						GameActivity.moOutLineX+142, GameActivity.moOutLineY+208, 
-//						GameActivity.moOutLineX+142, GameActivity.moOutLineY+208,
-//						GameActivity.moOutLineX+142, GameActivity.moOutLineY+208,
-//						
-//						GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
-//						GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
-//						); 
+				MonkeyTutorial.monkeyTutorialstart(2,
+						GameActivity.moOutLineX - 28,
+						GameActivity.moOutLineY - 35,
+						GameActivity.moOutLineX + 202,
+						GameActivity.moOutLineY - 35,
+
+						GameActivity.moOutLineX+75, GameActivity.moOutLineY+25,
+						GameActivity.moOutLineX+43, GameActivity.moOutLineY+52, 
+						GameActivity.moOutLineX+38, GameActivity.moOutLineY+21,
+						GameActivity.moOutLineX+84, GameActivity.moOutLineY+1,
+						GameActivity.moOutLineX+117, GameActivity.moOutLineY+12,
+						GameActivity.moOutLineX+143, GameActivity.moOutLineY+43,
+						GameActivity.moOutLineX+137, GameActivity.moOutLineY+93,
+						GameActivity.moOutLineX+62, GameActivity.moOutLineY+112,
+						GameActivity.moOutLineX+18, GameActivity.moOutLineY+110, 
+						GameActivity.moOutLineX+83, GameActivity.moOutLineY+144, 
+						GameActivity.moOutLineX+144, GameActivity.moOutLineY+182, 
+						GameActivity.moOutLineX+190, GameActivity.moOutLineY+223, 
+						GameActivity.moOutLineX+190, GameActivity.moOutLineY+223, 
+						
+						//no need
+						GameActivity.moOutLineX+142, GameActivity.moOutLineY-48, 
+						GameActivity.moOutLineX+142, GameActivity.moOutLineY+208, 
+						GameActivity.moOutLineX+142, GameActivity.moOutLineY+208,
+						GameActivity.moOutLineX+142, GameActivity.moOutLineY+208,
+						
+						GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
+						GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
+						); 
 					
-				
 //				LetterStructureHo.createNumberSpriteAndCursor(); 
 		}
 		//Outline of letter Kho
 		else if(GameActivity.letter == 12)
 		{
-			
 			GameActivity.OutLine = new Sprite(GameActivity.moOutLineX-70, GameActivity.moOutLineY-80,
 					GameActivity.mKhoOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 			GameActivity.OutLine.setScale((float)0.9);
 			GameActivity.mScene.attachChild(GameActivity.OutLine);
 			
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(0.5, 5.6, 0.5, 2);
+			
 			//MonkeyTutorial start 
-//			MonkeyTutorial.monkeyTutorialstart(3,
-//					GameActivity.moOutLineX - 11,
-//					GameActivity.moOutLineY - 5,
-//					GameActivity.moOutLineX + 23,
-//					GameActivity.moOutLineY + 15,
-//
-//					GameActivity.moOutLineX+23, GameActivity.moOutLineY+15,
-//					GameActivity.moOutLineX+72, GameActivity.moOutLineY-11,
-//					GameActivity.moOutLineX+100, GameActivity.moOutLineY+26, 
-//					GameActivity.moOutLineX+68, GameActivity.moOutLineY+68,
-//					GameActivity.moOutLineX+20, GameActivity.moOutLineY+95,
-//					GameActivity.moOutLineX+83, GameActivity.moOutLineY+116,
-//					GameActivity.moOutLineX+126, GameActivity.moOutLineY+155,
-//					GameActivity.moOutLineX+150, GameActivity.moOutLineY+193,
-//					GameActivity.moOutLineX+150, GameActivity.moOutLineY-52, 
-//					
-//					GameActivity.moOutLineX+150, GameActivity.moOutLineY-20, 
-//					GameActivity.moOutLineX+175, GameActivity.moOutLineY-20, 
-//					GameActivity.moOutLineX+175, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+175, GameActivity.moOutLineY-20,
-//					
-//					//no need
-//					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
-//					); 
+			MonkeyTutorial.monkeyTutorialstart(3,
+					GameActivity.moOutLineX + 7,
+					GameActivity.moOutLineY + 12,
+					GameActivity.moOutLineX + 2,
+					GameActivity.moOutLineY - 4,
+
+					GameActivity.moOutLineX-14, GameActivity.moOutLineY+2,
+					GameActivity.moOutLineX-12, GameActivity.moOutLineY+19, 
+					GameActivity.moOutLineX+23, GameActivity.moOutLineY+20,
+					GameActivity.moOutLineX+72, GameActivity.moOutLineY-11,
+					GameActivity.moOutLineX+100, GameActivity.moOutLineY+26, 
+					GameActivity.moOutLineX+68, GameActivity.moOutLineY+68,
+					GameActivity.moOutLineX+20, GameActivity.moOutLineY+95,
+					GameActivity.moOutLineX+83, GameActivity.moOutLineY+116,
+					GameActivity.moOutLineX+126, GameActivity.moOutLineY+155,
+					GameActivity.moOutLineX+150, GameActivity.moOutLineY+193,
+					GameActivity.moOutLineX+150, GameActivity.moOutLineY-52, 
+					GameActivity.moOutLineX+150, GameActivity.moOutLineY-52, 
+					GameActivity.moOutLineX+150, GameActivity.moOutLineY-52, 
+					
+					GameActivity.moOutLineX+150, GameActivity.moOutLineY-20, 
+					GameActivity.moOutLineX+175, GameActivity.moOutLineY-20, 
+					GameActivity.moOutLineX+175, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+175, GameActivity.moOutLineY-20,
+					
+					//no need
+					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
+					); 
 			
 //			LetterStructureKho.createNumberSpriteAndCursor(); 
 			
@@ -539,38 +633,44 @@ public class createObjects
 		//Outline of letter Cho
 		else if(GameActivity.letter == 13)
 		{
-			
 			GameActivity.OutLine = new Sprite(GameActivity.moOutLineX-70, GameActivity.moOutLineY-70,
 					GameActivity.mChoOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 			GameActivity.OutLine.setScale((float)0.9);
 			GameActivity.mScene.attachChild(GameActivity.OutLine);
 			
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(2.5, 5, 2, 4);
+			
 			//MonkeyTutorial start 
-//			MonkeyTutorial.monkeyTutorialstart(2,
-//					GameActivity.moOutLineX - 16,
-//					GameActivity.moOutLineY - 28,
-//					GameActivity.moOutLineX + 191,
-//					GameActivity.moOutLineY - 28,
-//
-//					GameActivity.moOutLineX+39, GameActivity.moOutLineY-26,
-//					GameActivity.moOutLineX+39, GameActivity.moOutLineY+161,
-//					GameActivity.moOutLineX+65, GameActivity.moOutLineY+185, 
-//					GameActivity.moOutLineX+124, GameActivity.moOutLineY+155,
-//					GameActivity.moOutLineX+160, GameActivity.moOutLineY+75,
-//					GameActivity.moOutLineX+74, GameActivity.moOutLineY+37,
-//					GameActivity.moOutLineX+39, GameActivity.moOutLineY-26,
-//					GameActivity.moOutLineX+39, GameActivity.moOutLineY-26,
-//					GameActivity.moOutLineX+39, GameActivity.moOutLineY-26, 
-//					
-//					//no need
-//					GameActivity.moOutLineX+150, GameActivity.moOutLineY-20, 
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20, 
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
-//					
-//					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
-//					); 
+			MonkeyTutorial.monkeyTutorialstart(2,
+					GameActivity.moOutLineX - 16,
+					GameActivity.moOutLineY - 28,
+					GameActivity.moOutLineX + 191,
+					GameActivity.moOutLineY - 28,
+
+					GameActivity.moOutLineX+39, GameActivity.moOutLineY-26,
+					GameActivity.moOutLineX+39, GameActivity.moOutLineY+161,
+					GameActivity.moOutLineX+65, GameActivity.moOutLineY+185, 
+					GameActivity.moOutLineX+124, GameActivity.moOutLineY+155,
+					GameActivity.moOutLineX+160, GameActivity.moOutLineY+75,
+					GameActivity.moOutLineX+74, GameActivity.moOutLineY+37,
+					GameActivity.moOutLineX+39, GameActivity.moOutLineY-26,
+					GameActivity.moOutLineX+39, GameActivity.moOutLineY-26,
+					GameActivity.moOutLineX+39, GameActivity.moOutLineY-26, 
+					GameActivity.moOutLineX+39, GameActivity.moOutLineY-26,
+					GameActivity.moOutLineX+39, GameActivity.moOutLineY-26, 
+					GameActivity.moOutLineX+39, GameActivity.moOutLineY-26,
+					GameActivity.moOutLineX+39, GameActivity.moOutLineY-26, 
+					
+					//no need
+					GameActivity.moOutLineX+150, GameActivity.moOutLineY-20, 
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20, 
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
+					
+					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
+					); 
 			
 			 
 //			LetterStructureCho.createNumberSpriteAndCursor(); 
@@ -579,38 +679,45 @@ public class createObjects
 		//Outline of letter No
 		else if(GameActivity.letter == 14)
 		{
-			
 			GameActivity.OutLine = new Sprite(GameActivity.moOutLineX-70, GameActivity.moOutLineY-70,
 					GameActivity.mNoOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 			GameActivity.OutLine.setScale((float)0.9);
 			GameActivity.mScene.attachChild(GameActivity.OutLine);
 			
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(2.5, 5, 2, 4);
+			
 			//MonkeyTutorial start 
-//			MonkeyTutorial.monkeyTutorialstart(2,
-//					GameActivity.moOutLineX - 16,
-//					GameActivity.moOutLineY - 40,
-//					GameActivity.moOutLineX + 191,
-//					GameActivity.moOutLineY - 40,
-//
-//					GameActivity.moOutLineX+41, GameActivity.moOutLineY+100,
-//					GameActivity.moOutLineX+25, GameActivity.moOutLineY+70,
-//					GameActivity.moOutLineX+50, GameActivity.moOutLineY+40, 
-//					GameActivity.moOutLineX+94, GameActivity.moOutLineY+43,
-//					GameActivity.moOutLineX+131, GameActivity.moOutLineY+81,
-//					GameActivity.moOutLineX+160, GameActivity.moOutLineY+131,
-//					GameActivity.moOutLineX+160, GameActivity.moOutLineY+198,
-//					GameActivity.moOutLineX+160, GameActivity.moOutLineY-40,
-//					GameActivity.moOutLineX+160, GameActivity.moOutLineY-40, 
-//					
-//					//no need
-//					GameActivity.moOutLineX+150, GameActivity.moOutLineY-20, 
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20, 
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
-//					
-//					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
-//					); 
+			MonkeyTutorial.monkeyTutorialstart(2,
+					GameActivity.moOutLineX - 16,
+					GameActivity.moOutLineY - 40,
+					GameActivity.moOutLineX + 191,
+					GameActivity.moOutLineY - 40,
+
+					GameActivity.moOutLineX+45, GameActivity.moOutLineY+61,
+					GameActivity.moOutLineX+55, GameActivity.moOutLineY+85,
+//					GameActivity.moOutLineX+35, GameActivity.moOutLineY+78,
+					GameActivity.moOutLineX+35, GameActivity.moOutLineY+100,
+					GameActivity.moOutLineX+25, GameActivity.moOutLineY+70,
+					GameActivity.moOutLineX+50, GameActivity.moOutLineY+40, 
+					GameActivity.moOutLineX+94, GameActivity.moOutLineY+43,
+					GameActivity.moOutLineX+131, GameActivity.moOutLineY+81,
+					GameActivity.moOutLineX+160, GameActivity.moOutLineY+131,
+					GameActivity.moOutLineX+160, GameActivity.moOutLineY+198,
+					GameActivity.moOutLineX+160, GameActivity.moOutLineY-40,
+					GameActivity.moOutLineX+160, GameActivity.moOutLineY-40,
+					GameActivity.moOutLineX+160, GameActivity.moOutLineY-40,
+					GameActivity.moOutLineX+160, GameActivity.moOutLineY-40,
+					
+					//no need
+					GameActivity.moOutLineX+150, GameActivity.moOutLineY-20, 
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20, 
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
+					
+					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
+					); 
 			
 //			LetterStructureNo.createNumberSpriteAndCursor(); 
 			
@@ -618,38 +725,45 @@ public class createObjects
 		//Outline of letter A
 		else if(GameActivity.letter == 15)
 		{
-			
 			GameActivity.OutLine = new Sprite(GameActivity.moOutLineX-70, GameActivity.moOutLineY-70,
 					GameActivity.mAOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 			GameActivity.OutLine.setScale((float)0.9);
 			GameActivity.mScene.attachChild(GameActivity.OutLine);
 			
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(0.5, 5, 2, 4);
+			
 			//MonkeyTutorial start 
-//			MonkeyTutorial.monkeyTutorialstart(2,
-//					GameActivity.moOutLineX + 104,
-//					GameActivity.moOutLineY + 72,
-//					GameActivity.moOutLineX + 73,
-//					GameActivity.moOutLineY + 67,
-//
-//					GameActivity.moOutLineX+73, GameActivity.moOutLineY+67,
-//					GameActivity.moOutLineX+90, GameActivity.moOutLineY+3,
-//					GameActivity.moOutLineX+138, GameActivity.moOutLineY-26, 
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-15,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY+170,
-//					GameActivity.moOutLineX+144, GameActivity.moOutLineY+141,
-//					GameActivity.moOutLineX+87, GameActivity.moOutLineY+134,
-//					GameActivity.moOutLineX+12, GameActivity.moOutLineY+123,
-//					GameActivity.moOutLineX, GameActivity.moOutLineY+40, 
-//					
-//					//no need
-//					GameActivity.moOutLineX+150, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
-//					
-//					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
-//					); 
+			MonkeyTutorial.monkeyTutorialstart(2,
+					GameActivity.moOutLineX + 84,
+					GameActivity.moOutLineY + 66,
+					GameActivity.moOutLineX + 101,
+					GameActivity.moOutLineY + 58,
+
+					GameActivity.moOutLineX+112, GameActivity.moOutLineY+67, 
+					GameActivity.moOutLineX+93, GameActivity.moOutLineY+78, 
+					GameActivity.moOutLineX+73, GameActivity.moOutLineY+67,
+					GameActivity.moOutLineX+90, GameActivity.moOutLineY+3,
+					GameActivity.moOutLineX+138, GameActivity.moOutLineY-26, 
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-15,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY+170,
+					GameActivity.moOutLineX+144, GameActivity.moOutLineY+141,
+					GameActivity.moOutLineX+87, GameActivity.moOutLineY+134,
+					GameActivity.moOutLineX+12, GameActivity.moOutLineY+123,
+					GameActivity.moOutLineX, GameActivity.moOutLineY+40, 
+					GameActivity.moOutLineX, GameActivity.moOutLineY+40, 
+					GameActivity.moOutLineX, GameActivity.moOutLineY+40,
+					
+					
+					//no need
+					GameActivity.moOutLineX+150, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
+					
+					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
+					); 
 			
 			
 //			LetterStructureA.createNumberSpriteAndCursor(); 
@@ -658,38 +772,44 @@ public class createObjects
 		//Outline of letter Do
 		else if(GameActivity.letter == 16)
 		{
-			
 			GameActivity.OutLine = new Sprite(GameActivity.moOutLineX-70, GameActivity.moOutLineY-70,
 					GameActivity.mDoOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 			GameActivity.OutLine.setScale((float)0.9);
 			GameActivity.mScene.attachChild(GameActivity.OutLine);
 			
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(2.5, 5, 2, 4);
+			
 			//MonkeyTutorial start 
-//			MonkeyTutorial.monkeyTutorialstart(2,
-//					GameActivity.moOutLineX - 33,
-//					GameActivity.moOutLineY - 25,
-//					GameActivity.moOutLineX + 204,
-//					GameActivity.moOutLineY - 25,
-//
-//					GameActivity.moOutLineX+80, GameActivity.moOutLineY-25,
-//					GameActivity.moOutLineX+80, GameActivity.moOutLineY+93,
-//					GameActivity.moOutLineX+125, GameActivity.moOutLineY+95,
-//					GameActivity.moOutLineX+160, GameActivity.moOutLineY+48, 
-//					GameActivity.moOutLineX+182, GameActivity.moOutLineY+95,
-//					GameActivity.moOutLineX+160, GameActivity.moOutLineY+175, 
-//					GameActivity.moOutLineX+87, GameActivity.moOutLineY+181,
-//					GameActivity.moOutLineX+25, GameActivity.moOutLineY+128,
-//					GameActivity.moOutLineX-5, GameActivity.moOutLineY+19, 
-//					
-//					//no need
-//					GameActivity.moOutLineX+150, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
-//					
-//					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
-//					); 
+			MonkeyTutorial.monkeyTutorialstart(2,
+					GameActivity.moOutLineX - 33,
+					GameActivity.moOutLineY - 25,
+					GameActivity.moOutLineX + 204,
+					GameActivity.moOutLineY - 25,
+
+					GameActivity.moOutLineX+80, GameActivity.moOutLineY-25,
+					GameActivity.moOutLineX+80, GameActivity.moOutLineY+93,
+					GameActivity.moOutLineX+125, GameActivity.moOutLineY+95,
+					GameActivity.moOutLineX+160, GameActivity.moOutLineY+48, 
+					GameActivity.moOutLineX+182, GameActivity.moOutLineY+95,
+					GameActivity.moOutLineX+160, GameActivity.moOutLineY+175, 
+					GameActivity.moOutLineX+87, GameActivity.moOutLineY+181,
+					GameActivity.moOutLineX+25, GameActivity.moOutLineY+128,
+					GameActivity.moOutLineX-5, GameActivity.moOutLineY+19, 
+					GameActivity.moOutLineX-5, GameActivity.moOutLineY+19, 
+					GameActivity.moOutLineX-5, GameActivity.moOutLineY+19, 
+					GameActivity.moOutLineX-5, GameActivity.moOutLineY+19, 
+					GameActivity.moOutLineX-5, GameActivity.moOutLineY+19, 
+					
+					//no need
+					GameActivity.moOutLineX+150, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
+					
+					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
+					); 
 			
 			
 //			LetterStructureDo.createNumberSpriteAndCursor(); 
@@ -698,38 +818,44 @@ public class createObjects
 		//Outline of letter U
 		else if(GameActivity.letter == 17)
 		{
-			
 			GameActivity.OutLine = new Sprite(GameActivity.moOutLineX-70, GameActivity.moOutLineY-70,
 					GameActivity.mUOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 			GameActivity.OutLine.setScale((float)0.9);
 			GameActivity.mScene.attachChild(GameActivity.OutLine);
 			
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(2.5, 5, 1.5, 4);
+			
 			//MonkeyTutorial start 
-//			MonkeyTutorial.monkeyTutorialstart(3,
-//					GameActivity.moOutLineX - 33,
-//					GameActivity.moOutLineY + 15,
-//					GameActivity.moOutLineX + 204,
-//					GameActivity.moOutLineY + 15,
-//
-//					GameActivity.moOutLineX+80, GameActivity.moOutLineY+15,
-//					GameActivity.moOutLineX+80, GameActivity.moOutLineY+133,
-//					GameActivity.moOutLineX+125, GameActivity.moOutLineY+135,
-//					GameActivity.moOutLineX+160, GameActivity.moOutLineY+88, 
-//					GameActivity.moOutLineX+182, GameActivity.moOutLineY+135,
-//					GameActivity.moOutLineX+160, GameActivity.moOutLineY+215, 
-//					GameActivity.moOutLineX+87, GameActivity.moOutLineY+221,
-//					GameActivity.moOutLineX+25, GameActivity.moOutLineY+168,
-//					GameActivity.moOutLineX-5, GameActivity.moOutLineY+59, 
-//					
-//					GameActivity.moOutLineX+146, GameActivity.moOutLineY+6,
-//					GameActivity.moOutLineX+139, GameActivity.moOutLineY-40,
-//					GameActivity.moOutLineX+14, GameActivity.moOutLineY-50,
-//					GameActivity.moOutLineX, GameActivity.moOutLineY-82,
-//					
-//					//no need
-//					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
-//					); 
+			MonkeyTutorial.monkeyTutorialstart(3,
+					GameActivity.moOutLineX - 33,
+					GameActivity.moOutLineY + 15,
+					GameActivity.moOutLineX + 204,
+					GameActivity.moOutLineY + 15,
+
+					GameActivity.moOutLineX+80, GameActivity.moOutLineY+15,
+					GameActivity.moOutLineX+80, GameActivity.moOutLineY+133,
+					GameActivity.moOutLineX+125, GameActivity.moOutLineY+135,
+					GameActivity.moOutLineX+160, GameActivity.moOutLineY+88, 
+					GameActivity.moOutLineX+182, GameActivity.moOutLineY+135,
+					GameActivity.moOutLineX+160, GameActivity.moOutLineY+215, 
+					GameActivity.moOutLineX+87, GameActivity.moOutLineY+221,
+					GameActivity.moOutLineX+25, GameActivity.moOutLineY+168,
+					GameActivity.moOutLineX-5, GameActivity.moOutLineY+59, 
+					GameActivity.moOutLineX-5, GameActivity.moOutLineY+59,
+					GameActivity.moOutLineX-5, GameActivity.moOutLineY+59,
+					GameActivity.moOutLineX-5, GameActivity.moOutLineY+59,
+					GameActivity.moOutLineX-5, GameActivity.moOutLineY+59,
+					
+					GameActivity.moOutLineX+146, GameActivity.moOutLineY+6,
+					GameActivity.moOutLineX+139, GameActivity.moOutLineY-40,
+					GameActivity.moOutLineX+14, GameActivity.moOutLineY-50,
+					GameActivity.moOutLineX, GameActivity.moOutLineY-82,
+					
+					//no need
+					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
+					); 
 			
 			
 //			LetterStructureU.createNumberSpriteAndCursor(); 
@@ -738,39 +864,44 @@ public class createObjects
 		//Outline of letter To
 		else if(GameActivity.letter == 18)
 		{
-			
 			GameActivity.OutLine = new Sprite(GameActivity.moOutLineX-70, GameActivity.moOutLineY-100,
 					GameActivity.mToOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 			GameActivity.OutLine.setScale((float)0.9);
 			GameActivity.mScene.attachChild(GameActivity.OutLine);
-			 
+			
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(2.5, 5, 2, 4);
 
 			//MonkeyTutorial start 
-//			MonkeyTutorial.monkeyTutorialstart(2,
-//					GameActivity.moOutLineX - 33,
-//					GameActivity.moOutLineY - 15,
-//					GameActivity.moOutLineX + 204,
-//					GameActivity.moOutLineY - 15,
-//
-//					GameActivity.moOutLineX+94, GameActivity.moOutLineY+85,
-//					GameActivity.moOutLineX+94, GameActivity.moOutLineY+44,
-//					GameActivity.moOutLineX+125, GameActivity.moOutLineY+40,
-//					GameActivity.moOutLineX+160, GameActivity.moOutLineY+48, 
-//					GameActivity.moOutLineX+188, GameActivity.moOutLineY+95,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY+175, 
-//					GameActivity.moOutLineX+87, GameActivity.moOutLineY+181,
-//					GameActivity.moOutLineX+25, GameActivity.moOutLineY+128,
-//					GameActivity.moOutLineX-5, GameActivity.moOutLineY+19, 
-//					
-//					//no need
-//					GameActivity.moOutLineX+150, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
-//					
-//					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
-//					); 
+			MonkeyTutorial.monkeyTutorialstart(2,
+					GameActivity.moOutLineX - 33,
+					GameActivity.moOutLineY - 15,
+					GameActivity.moOutLineX + 204,
+					GameActivity.moOutLineY - 15,
+
+					GameActivity.moOutLineX+104, GameActivity.moOutLineY+55,
+					GameActivity.moOutLineX+118, GameActivity.moOutLineY+80,
+					GameActivity.moOutLineX+98, GameActivity.moOutLineY+94,
+					GameActivity.moOutLineX+75, GameActivity.moOutLineY+64,
+					GameActivity.moOutLineX+94, GameActivity.moOutLineY+44,
+					GameActivity.moOutLineX+125, GameActivity.moOutLineY+40,
+					GameActivity.moOutLineX+160, GameActivity.moOutLineY+48, 
+					GameActivity.moOutLineX+188, GameActivity.moOutLineY+95,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY+175, 
+					GameActivity.moOutLineX+87, GameActivity.moOutLineY+181,
+					GameActivity.moOutLineX+25, GameActivity.moOutLineY+128,
+					GameActivity.moOutLineX-5, GameActivity.moOutLineY+19, 
+					GameActivity.moOutLineX-5, GameActivity.moOutLineY+19, 
+					
+					//no need
+					GameActivity.moOutLineX+150, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20,
+					
+					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
+					); 
 			
 //			LetterStructureTo.createNumberSpriteAndCursor(); 
 			
@@ -778,38 +909,44 @@ public class createObjects
 		//Outline of letter Toh
 		else if(GameActivity.letter == 19)
 		{
-			
 			GameActivity.OutLine = new Sprite(GameActivity.moOutLineX-70, GameActivity.moOutLineY-100,
 					GameActivity.mTohOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 			GameActivity.OutLine.setScale((float)0.9);
 			GameActivity.mScene.attachChild(GameActivity.OutLine);
+			
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(2.5, 5, 2, 4);
 			 
 			//MonkeyTutorial start 
-//			MonkeyTutorial.monkeyTutorialstart(3,
-//					GameActivity.moOutLineX - 20,
-//					GameActivity.moOutLineY +5,
-//					GameActivity.moOutLineX + 200,
-//					GameActivity.moOutLineY +5,
-//
-//					GameActivity.moOutLineX+34, GameActivity.moOutLineY+5,
-//					GameActivity.moOutLineX+34, GameActivity.moOutLineY+187,
-//					GameActivity.moOutLineX+80, GameActivity.moOutLineY+208,
-//					GameActivity.moOutLineX+128, GameActivity.moOutLineY+181, 
-//					GameActivity.moOutLineX+160, GameActivity.moOutLineY+134,
-//					GameActivity.moOutLineX+138, GameActivity.moOutLineY+80, 
-//					GameActivity.moOutLineX+115, GameActivity.moOutLineY+95,
-//					GameActivity.moOutLineX+115, GameActivity.moOutLineY+95,
-//					GameActivity.moOutLineX+115, GameActivity.moOutLineY+95, 
-//					
-//					GameActivity.moOutLineX+152, GameActivity.moOutLineY-4,
-//					GameActivity.moOutLineX+135, GameActivity.moOutLineY-55,
-//					GameActivity.moOutLineX+24, GameActivity.moOutLineY-68,
-//					GameActivity.moOutLineX-1, GameActivity.moOutLineY-99,
-//					
-//					//no need
-//					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
-//					); 
+			MonkeyTutorial.monkeyTutorialstart(3,
+					GameActivity.moOutLineX - 20,
+					GameActivity.moOutLineY +5,
+					GameActivity.moOutLineX + 200,
+					GameActivity.moOutLineY +5,
+
+					GameActivity.moOutLineX+34, GameActivity.moOutLineY+5,
+					GameActivity.moOutLineX+34, GameActivity.moOutLineY+187,
+					GameActivity.moOutLineX+80, GameActivity.moOutLineY+208,
+					GameActivity.moOutLineX+128, GameActivity.moOutLineY+181, 
+					GameActivity.moOutLineX+160, GameActivity.moOutLineY+134,
+					GameActivity.moOutLineX+138, GameActivity.moOutLineY+80, 
+					GameActivity.moOutLineX+115, GameActivity.moOutLineY+80,
+					GameActivity.moOutLineX+115, GameActivity.moOutLineY+100,
+					GameActivity.moOutLineX+138, GameActivity.moOutLineY+100, 
+					GameActivity.moOutLineX+138, GameActivity.moOutLineY+100,
+					GameActivity.moOutLineX+138, GameActivity.moOutLineY+100, 
+					GameActivity.moOutLineX+138, GameActivity.moOutLineY+100,
+					GameActivity.moOutLineX+138, GameActivity.moOutLineY+100, 
+					
+					GameActivity.moOutLineX+152, GameActivity.moOutLineY-4,
+					GameActivity.moOutLineX+135, GameActivity.moOutLineY-55,
+					GameActivity.moOutLineX+24, GameActivity.moOutLineY-68,
+					GameActivity.moOutLineX-1, GameActivity.moOutLineY-99,
+					
+					//no need
+					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
+					); 
 			
 //			LetterStructureToh.createNumberSpriteAndCursor(); 
 			
@@ -817,39 +954,44 @@ public class createObjects
 		//Outline of letter Doh
 		else if(GameActivity.letter == 20)
 		{
-			
 			GameActivity.OutLine = new Sprite(GameActivity.moOutLineX-70, GameActivity.moOutLineY-70,
 					GameActivity.mDohOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 			GameActivity.OutLine.setScale((float)0.9);
 			GameActivity.mScene.attachChild(GameActivity.OutLine);
+			
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(2.5, 5, 2, 4);
 			 
 			//MonkeyTutorial start 
-//			MonkeyTutorial.monkeyTutorialstart(2,
-//					GameActivity.moOutLineX - 20,
-//					GameActivity.moOutLineY -35,
-//					GameActivity.moOutLineX + 204,
-//					GameActivity.moOutLineY -35,
-//
-//					GameActivity.moOutLineX+20, GameActivity.moOutLineY-35,
-//					GameActivity.moOutLineX+20, GameActivity.moOutLineY+86,
-//					GameActivity.moOutLineX+35, GameActivity.moOutLineY+114,
-//					GameActivity.moOutLineX+110, GameActivity.moOutLineY+45, 
-//					GameActivity.moOutLineX+140, GameActivity.moOutLineY+26,
-//					GameActivity.moOutLineX+158, GameActivity.moOutLineY+50, 
-//					GameActivity.moOutLineX+139, GameActivity.moOutLineY+115,
-//					GameActivity.moOutLineX+140, GameActivity.moOutLineY+190,
-//					GameActivity.moOutLineX+140, GameActivity.moOutLineY+190,
-//					
-//					//no need
-//					GameActivity.moOutLineX+152, GameActivity.moOutLineY-4,
-//					GameActivity.moOutLineX+135, GameActivity.moOutLineY-55,
-//					GameActivity.moOutLineX+24, GameActivity.moOutLineY-68,
-//					GameActivity.moOutLineX-1, GameActivity.moOutLineY-99,
-//					
-//					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
-//					); 
-			
+			MonkeyTutorial.monkeyTutorialstart(2,
+					GameActivity.moOutLineX - 20,
+					GameActivity.moOutLineY -35,
+					GameActivity.moOutLineX + 204,
+					GameActivity.moOutLineY -35,
+
+					GameActivity.moOutLineX+20, GameActivity.moOutLineY-35,
+					GameActivity.moOutLineX+20, GameActivity.moOutLineY+86,
+					GameActivity.moOutLineX+35, GameActivity.moOutLineY+114,
+					GameActivity.moOutLineX+110, GameActivity.moOutLineY+45, 
+					GameActivity.moOutLineX+140, GameActivity.moOutLineY+26,
+					GameActivity.moOutLineX+158, GameActivity.moOutLineY+50, 
+					GameActivity.moOutLineX+139, GameActivity.moOutLineY+115,
+					GameActivity.moOutLineX+140, GameActivity.moOutLineY+190,
+					GameActivity.moOutLineX+140, GameActivity.moOutLineY+190,
+					GameActivity.moOutLineX+140, GameActivity.moOutLineY+190,
+					GameActivity.moOutLineX+140, GameActivity.moOutLineY+190,
+					GameActivity.moOutLineX+140, GameActivity.moOutLineY+190,
+					GameActivity.moOutLineX+140, GameActivity.moOutLineY+190,
+					
+					//no need
+					GameActivity.moOutLineX+152, GameActivity.moOutLineY-4,
+					GameActivity.moOutLineX+135, GameActivity.moOutLineY-55,
+					GameActivity.moOutLineX+24, GameActivity.moOutLineY-68,
+					GameActivity.moOutLineX-1, GameActivity.moOutLineY-99,
+					
+					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
+					); 
 			
 //			LetterStructureDoh.createNumberSpriteAndCursor(); 
 			
@@ -857,39 +999,44 @@ public class createObjects
 		//Outline of letter Ukar
 		else if(GameActivity.letter == 21)
 		{
-			
 			GameActivity.OutLine = new Sprite(GameActivity.moOutLineX-70, GameActivity.moOutLineY-70,
 					GameActivity.mUkarOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 			GameActivity.OutLine.setScale((float)0.9);
 			GameActivity.mScene.attachChild(GameActivity.OutLine);
 			 
-			//MonkeyTutorial start 
-//			MonkeyTutorial.monkeyTutorialstart(2,
-//					GameActivity.moOutLineX + 100, 
-//					GameActivity.moOutLineY - 17,
-//					GameActivity.moOutLineX + 104,
-//					GameActivity.moOutLineY + 87,
-//
-//					GameActivity.moOutLineX+104, GameActivity.moOutLineY+87,
-//					GameActivity.moOutLineX+34, GameActivity.moOutLineY+132,
-//					GameActivity.moOutLineX-26, GameActivity.moOutLineY+103,
-//					GameActivity.moOutLineX-28, GameActivity.moOutLineY+64, 
-//					GameActivity.moOutLineX+21, GameActivity.moOutLineY+40,
-//					GameActivity.moOutLineX+84, GameActivity.moOutLineY+63, 
-//					GameActivity.moOutLineX+139, GameActivity.moOutLineY+98,
-//					GameActivity.moOutLineX+201, GameActivity.moOutLineY+174,
-//					GameActivity.moOutLineX+201, GameActivity.moOutLineY+174,
-//					
-//					//no need
-//					GameActivity.moOutLineX+152, GameActivity.moOutLineY-4,
-//					GameActivity.moOutLineX+135, GameActivity.moOutLineY-55,
-//					GameActivity.moOutLineX+24, GameActivity.moOutLineY-68,
-//					GameActivity.moOutLineX-1, GameActivity.moOutLineY-99,
-//					
-//					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
-//					); 
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(1.5, 4, 2, 4);
 			
+			//MonkeyTutorial start 
+			MonkeyTutorial.monkeyTutorialstart(2,
+					GameActivity.moOutLineX + 100, 
+					GameActivity.moOutLineY - 17,
+					GameActivity.moOutLineX + 104,
+					GameActivity.moOutLineY + 87,
+
+					GameActivity.moOutLineX+104, GameActivity.moOutLineY+87,
+					GameActivity.moOutLineX+34, GameActivity.moOutLineY+132,
+					GameActivity.moOutLineX-26, GameActivity.moOutLineY+103,
+					GameActivity.moOutLineX-28, GameActivity.moOutLineY+64, 
+					GameActivity.moOutLineX+21, GameActivity.moOutLineY+40,
+					GameActivity.moOutLineX+84, GameActivity.moOutLineY+63, 
+					GameActivity.moOutLineX+139, GameActivity.moOutLineY+98,
+					GameActivity.moOutLineX+201, GameActivity.moOutLineY+174,
+					GameActivity.moOutLineX+201, GameActivity.moOutLineY+174,
+					GameActivity.moOutLineX+201, GameActivity.moOutLineY+174,
+					GameActivity.moOutLineX+201, GameActivity.moOutLineY+174,
+					GameActivity.moOutLineX+201, GameActivity.moOutLineY+174,
+					GameActivity.moOutLineX+201, GameActivity.moOutLineY+174,
+					
+					//no need
+					GameActivity.moOutLineX+152, GameActivity.moOutLineY-4,
+					GameActivity.moOutLineX+135, GameActivity.moOutLineY-55,
+					GameActivity.moOutLineX+24, GameActivity.moOutLineY-68,
+					GameActivity.moOutLineX-1, GameActivity.moOutLineY-99,
+					
+					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
+					); 
 			
 //			LetterStructureUkar.createNumberSpriteAndCursor(); 
 			
@@ -897,39 +1044,45 @@ public class createObjects
 		//Outline of letter Ekar
 		else if(GameActivity.letter == 22)
 		{
-			
 			GameActivity.OutLine = new Sprite(GameActivity.moOutLineX-70, GameActivity.moOutLineY-70,
 					GameActivity.mEkarOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 			GameActivity.OutLine.setScaleX((float)0.8);
 			GameActivity.OutLine.setScaleY((float)0.7);
 			GameActivity.mScene.attachChild(GameActivity.OutLine);
 			 
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(1, 1.5, 2, 4);
+			
 			//MonkeyTutorial start 
-//			MonkeyTutorial.monkeyTutorialstart(3,
-//					GameActivity.moOutLineX - 32, 
-//					GameActivity.moOutLineY + 31,
-//					GameActivity.moOutLineX + 66,
-//					GameActivity.moOutLineY + 31,
-//
-//					GameActivity.moOutLineX+25, GameActivity.moOutLineY+31,
-//					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201,
-//					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201,
-//					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201,
-//					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201,
-//					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201,
-//					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201,
-//					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201,
-//					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201, 
-//					
-//					//no need
-//					GameActivity.moOutLineX+15, GameActivity.moOutLineY+25,
-//					GameActivity.moOutLineX+14, GameActivity.moOutLineY-19,
-//					GameActivity.moOutLineX+81, GameActivity.moOutLineY-46,
-//					GameActivity.moOutLineX+195, GameActivity.moOutLineY-13,
-//					
-//					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
-//					); 
+			MonkeyTutorial.monkeyTutorialstart(3,
+					GameActivity.moOutLineX - 32, 
+					GameActivity.moOutLineY + 31,
+					GameActivity.moOutLineX + 66,
+					GameActivity.moOutLineY + 31,
+
+					GameActivity.moOutLineX+25, GameActivity.moOutLineY+31,
+					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201,
+					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201,
+					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201,
+					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201,
+					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201,
+					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201,
+					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201,
+					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201, 
+					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201,
+					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201,
+					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201,
+					GameActivity.moOutLineX+25, GameActivity.moOutLineY+201, 
+					
+					//no need
+					GameActivity.moOutLineX+15, GameActivity.moOutLineY+25,
+					GameActivity.moOutLineX+14, GameActivity.moOutLineY-19,
+					GameActivity.moOutLineX+81, GameActivity.moOutLineY-46,
+					GameActivity.moOutLineX+195, GameActivity.moOutLineY-13,
+					
+					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
+					); 
 			
 //			LetterStructureEkar.createNumberSpriteAndCursor(); 
 			
@@ -937,39 +1090,45 @@ public class createObjects
 		//Outline of letter Akar
 		else if(GameActivity.letter == 23)
 		{
-			
 			GameActivity.OutLine = new Sprite(GameActivity.moOutLineX-70, GameActivity.moOutLineY-70,
 					GameActivity.mAkarOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
 			GameActivity.OutLine.setScaleX((float)0.8);
 			GameActivity.OutLine.setScaleY((float)0.7);
 			GameActivity.mScene.attachChild(GameActivity.OutLine);
 			 
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(1.5, 2.5, 2, 4);
+			
 			//MonkeyTutorial start 
-//			MonkeyTutorial.monkeyTutorialstart(2,
-//					GameActivity.moOutLineX + 1, 
-//					GameActivity.moOutLineY - 8,
-//					GameActivity.moOutLineX + 148,
-//					GameActivity.moOutLineY - 8,
-//
-//					GameActivity.moOutLineX+114, GameActivity.moOutLineY+1,
-//					GameActivity.moOutLineX+67, GameActivity.moOutLineY+51,
-//					GameActivity.moOutLineX+57, GameActivity.moOutLineY+106,
-//					GameActivity.moOutLineX+77, GameActivity.moOutLineY+156,
-//					GameActivity.moOutLineX+140, GameActivity.moOutLineY+165,
-//					GameActivity.moOutLineX+135, GameActivity.moOutLineY+155,
-//					GameActivity.moOutLineX+135, GameActivity.moOutLineY+155,
-//					GameActivity.moOutLineX+135, GameActivity.moOutLineY+155,
-//					GameActivity.moOutLineX+135, GameActivity.moOutLineY+155, 
-//					
-//					//no need
-//					GameActivity.moOutLineX+15, GameActivity.moOutLineY+25,
-//					GameActivity.moOutLineX+14, GameActivity.moOutLineY-19,
-//					GameActivity.moOutLineX+81, GameActivity.moOutLineY-46,
-//					GameActivity.moOutLineX+195, GameActivity.moOutLineY-13,
-//					
-//					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
-//					); 
+			MonkeyTutorial.monkeyTutorialstart(2,
+					GameActivity.moOutLineX + 1, 
+					GameActivity.moOutLineY - 8,
+					GameActivity.moOutLineX + 148,
+					GameActivity.moOutLineY - 8,
+
+					GameActivity.moOutLineX+114, GameActivity.moOutLineY+1,
+					GameActivity.moOutLineX+67, GameActivity.moOutLineY+51,
+					GameActivity.moOutLineX+57, GameActivity.moOutLineY+106,
+					GameActivity.moOutLineX+77, GameActivity.moOutLineY+156,
+					GameActivity.moOutLineX+140, GameActivity.moOutLineY+165,
+					GameActivity.moOutLineX+145, GameActivity.moOutLineY+155,
+					GameActivity.moOutLineX+140, GameActivity.moOutLineY+145,
+					GameActivity.moOutLineX+135, GameActivity.moOutLineY+145,
+					GameActivity.moOutLineX+135, GameActivity.moOutLineY+165, 
+					GameActivity.moOutLineX+135, GameActivity.moOutLineY+165,
+					GameActivity.moOutLineX+135, GameActivity.moOutLineY+165,
+					GameActivity.moOutLineX+135, GameActivity.moOutLineY+165,
+					GameActivity.moOutLineX+135, GameActivity.moOutLineY+165, 
+					
+					//no need
+					GameActivity.moOutLineX+15, GameActivity.moOutLineY+25,
+					GameActivity.moOutLineX+14, GameActivity.moOutLineY-19,
+					GameActivity.moOutLineX+81, GameActivity.moOutLineY-46,
+					GameActivity.moOutLineX+195, GameActivity.moOutLineY-13,
+					
+					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
+					); 
 			
 //			LetterStructureAkar.createNumberSpriteAndCursor(); 
 			

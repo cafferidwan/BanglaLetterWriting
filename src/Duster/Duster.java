@@ -13,6 +13,7 @@ import org.andengine.util.modifier.ease.EaseBounceOut;
 import android.content.Intent;
 
 import com.example.banglaletterwriting.GameActivity;
+import com.example.banglaletterwriting.Menu;
 
 public class Duster
 {
@@ -153,6 +154,21 @@ public class Duster
 							
 							GameActivity.mScene.detachChild(GameActivity.handTutorial);
 							GameActivity.mScene.unregisterUpdateHandler(GameActivity.timer1);
+							//if the letter is A, then start Akar after it
+							if(Menu.letterNumber == 15)
+							{
+								 Menu.letterNumber = 23;
+							}
+							//if the letter is E, then start Ekar after it
+							else if(Menu.letterNumber == 3)
+							{
+								 Menu.letterNumber = 22;
+							}
+							//if the letter is U, then start Ukar after it
+							else if(Menu.letterNumber == 17)
+							{
+								 Menu.letterNumber = 21;
+							}
 							GameActivity.MainActivityInstace.finish();
 							GameActivity.MainActivityInstace.startActivity(new Intent(GameActivity.MainActivityInstace.getBaseContext(),
 									GameActivity.class));

@@ -110,7 +110,7 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 			mPopUpBlackBoardTextureRegion, mBookIconRegion,
 			mCreatePopUpRegion, mCorrectLetterRegion, 
 			mHandTutorialTextureRegion,	mCrossRegion,
-			mDusterTextureRegion; 
+			mDusterTextureRegion, mHomeButtoTextureRegion; 
 	
 
 	private BuildableBitmapTextureAtlas mAnimatedBitmapTextureAtlas,
@@ -120,7 +120,8 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 	
 	public static BitmapTextureAtlas mBitmapTextureAtlasBlackBoard,
 	mBitmapTextureAtlasMoOutLine, mBitmapTextureAtlasBackGround,
-	mBitmapTextureAtlasWhiteChalk, mBitmapTextureAtlasCursor;
+	mBitmapTextureAtlasWhiteChalk, mBitmapTextureAtlasCursor,
+	mBitmapTextureAtlasHomeButton;
 	
 	
 	public static BitmapTextureAtlas mBitmapTextureAtlasPieceChalk,
@@ -140,8 +141,7 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 	public static Sprite[] whiteChalk = new Sprite[5000];
 	public static Sprite[] tutorialWhiteChalk = new Sprite[5000];
 	
-	public static Sprite backGround, blackBoard, OutLine, aaOutLine, rawOutLine, koOutline,
-						boOutline, talibaSha;
+	public static Sprite backGround, blackBoard, OutLine, homeButton;
 	public static Sprite bookIcon, handTutorial, duster, slidingScreen;
 	public static Sprite createPopUp, correctLetter, drawnPicture, cross, board;
 	public static AnimatedSprite cursor;
@@ -443,6 +443,9 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 
 		mBitmapTextureAtlasWhiteChalk = new BitmapTextureAtlas(this.getTextureManager(), 50, 50, TextureOptions.BILINEAR);
 
+		mBitmapTextureAtlasHomeButton = new BitmapTextureAtlas(this.getTextureManager(), 150, 150, TextureOptions.BILINEAR);
+
+		
 		//popup
 		mBitmapTextureAtlasBookIcon = new BitmapTextureAtlas(this.getTextureManager(), 200, 200, TextureOptions.BILINEAR);
 		 
@@ -511,6 +514,10 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 		mWhiteChalkTextureRegion = BitmapTextureAtlasTextureRegionFactory
 				.createTiledFromAsset(mBitmapTextureAtlasWhiteChalk, this,
 						"chalk2.png", 0, 0, 1, 1);
+		
+		mHomeButtoTextureRegion = BitmapTextureAtlasTextureRegionFactory
+				.createTiledFromAsset(mBitmapTextureAtlasHomeButton, this,
+						"homeButton.png", 0, 0, 1, 1);
 
 		// All the numbers
 		for (int i = 1; i <= 4; i++) 
@@ -558,6 +565,7 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 		mBitmapTextureAtlasBackGround.load();
 		mBitmapTextureAtlasBlackBoard.load();
 		mBitmapTextureAtlasWhiteChalk.load();
+		mBitmapTextureAtlasHomeButton.load();
 		
 		mBitmapTextureAtlasBookIcon.load();
 		mBitmapTextureAtlasHandWirtingBook.load();

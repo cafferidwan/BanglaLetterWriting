@@ -39,7 +39,7 @@ public class LetterStructureE
 		{
 			GameActivity.spriteCounter++;
 			StructureDrawAnimation.scale(GameActivity.moOutLineX-80*GameActivity.spriteCounter +940 ,
-					GameActivity.moOutLineY-40*GameActivity.spriteCounter+370,
+					GameActivity.moOutLineY-50*GameActivity.spriteCounter+480,
 					GameActivity.spriteCounter);
 		}
 		
@@ -434,10 +434,10 @@ public class LetterStructureE
 				GameActivity.posY = GameActivity.numberSprites[11].getY()+GameActivity.numberSprites[11].getHeight()/2-20;
 				
 				if(
-						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
-						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
-							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
+						 GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -150 
+						 	|| GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>150 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>150 
+							|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-150 
 						)
 				{
 					
