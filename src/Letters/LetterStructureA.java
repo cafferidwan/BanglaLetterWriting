@@ -71,10 +71,10 @@ public class LetterStructureA
 			GameActivity.posY = GameActivity.numberSprites[1].getY()+GameActivity.numberSprites[1].getHeight()/2-20;
 
 			if( 
-				   GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -70 
-				||GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>70 
-				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>70 
-				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-70 
+				   GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX< -100 
+				||GameActivity.whiteChalk[GameActivity.aCounter].getX() - GameActivity.posX>100 
+				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY>100 
+				|| GameActivity.whiteChalk[GameActivity.aCounter].getY() - GameActivity.posY<-100 
 					)
 			{ 
 				//set the cursor to the last collided number sprite

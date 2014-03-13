@@ -57,7 +57,7 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 								mUFilledTextureRegion, mToFilledTextureRegion,
 								mTohFilledTextureRegion, mDohFilledTextureRegion,
 								mUkarFilledTextureRegion, mEkarFilledTextureRegion,
-								mAkarFilledTextureRegion;
+								mAkarFilledTextureRegion, mAakarFilledTextureRegion;
 	
 	public static BitmapTextureAtlas mBitmapTextureAtlasMoFilled, mBitmapTextureAtlasAaFilled,
 									mBitmapTextureAtlasEFilled, mBitmapTextureAtlasHoFilled,
@@ -70,7 +70,7 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 									mBitmapTextureAtlasUFilled, mBitmapTextureAtlasToFilled,
 									mBitmapTextureAtlasTohFilled, mBitmapTextureAtlasDohFilled,
 									mBitmapTextureAtlasUkarFilled, mBitmapTextureAtlasEkarFilled,
-									mBitmapTextureAtlasAkarFilled;
+									mBitmapTextureAtlasAkarFilled, mBitmapTextureAtlasAakarFilled;
 	
 	
 	
@@ -85,7 +85,8 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 	 mBitmapTextureAtlasDoOutLine, mBitmapTextureAtlasUOutLine,
 	 mBitmapTextureAtlasToOutLine, mBitmapTextureAtlasTohOutLine,
 	 mBitmapTextureAtlasDohOutLine, mBitmapTextureAtlasUkarOutLine,
-	 mBitmapTextureAtlasEkarOutLine, mBitmapTextureAtlasAkarOutLine;
+	 mBitmapTextureAtlasEkarOutLine, mBitmapTextureAtlasAkarOutLine,
+	 mBitmapTextureAtlasAakarOutLine;
 	 
 	public static ITextureRegion mAaOutLineTextureRegion, 
 	mEOutLineTextureRegion, mRawOutLineTextureRegion,
@@ -98,7 +99,8 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 	mDoOutLineTextureRegion, mUOutLineTextureRegion,
 	mToOutLineTextureRegion, mTohOutLineTextureRegion,
 	mDohOutLineTextureRegion, mUkarOutLineTextureRegion,
-	mEkarOutLineTextureRegion, mAkarOutLineTextureRegion;
+	mEkarOutLineTextureRegion, mAkarOutLineTextureRegion,
+	mAakarOutLineTextureRegion;
 	
 	//Menu Items
 	public static BitmapTextureAtlas[][] mBitmapTextureAtlasMenuLetters = new BitmapTextureAtlas[50][50];
@@ -293,6 +295,10 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 		mAkarFilledTextureRegion = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(mBitmapTextureAtlasAkarFilled, this,
 				"akarFilled.png", 0, 0,  1, 1);
 		
+		mBitmapTextureAtlasAakarFilled = new BitmapTextureAtlas(this.getTextureManager(), 400, 400, TextureOptions.BILINEAR);
+		mAakarFilledTextureRegion = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(mBitmapTextureAtlasAakarFilled, this,
+				"aakarFilled.png", 0, 0,  1, 1);
+		
 		
 		
 		
@@ -343,6 +349,7 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 		
 		mBitmapTextureAtlasAkarOutLine = new BitmapTextureAtlas(this.getTextureManager(), 400, 400, TextureOptions.BILINEAR);
 		
+		mBitmapTextureAtlasAakarOutLine = new BitmapTextureAtlas(this.getTextureManager(), 400, 400, TextureOptions.BILINEAR);
 		
 		
 		
@@ -413,6 +420,10 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 		mAkarOutLineTextureRegion = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(mBitmapTextureAtlasAkarOutLine, this,
 				"akarExample.png", 0, 0,  1, 1);
 		
+		mAakarOutLineTextureRegion = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(mBitmapTextureAtlasAakarOutLine, this,
+				"aakarExample.png", 0, 0,  1, 1);
+		
+		
 		
 		//Menu images
 		BitmapTextureAtlasTextureRegionFactory.setAssetBasePath("iWriteGFX/");
@@ -451,7 +462,7 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 		 
 		mBitmapTextureAtlasHandWirtingBook = new BitmapTextureAtlas(this.getTextureManager(), 1600, 800, TextureOptions.BILINEAR);
 		 
-		mBitmapTextureAtlasBoard = new BitmapTextureAtlas(this.getTextureManager(), 600, 600, TextureOptions.BILINEAR);
+		mBitmapTextureAtlasBoard = new BitmapTextureAtlas(this.getTextureManager(), 600, 800, TextureOptions.BILINEAR);
 		 
 		mBitmapTextureAtlasHandCross = new BitmapTextureAtlas(this.getTextureManager(), 200, 200, TextureOptions.BILINEAR);
 		
@@ -482,7 +493,7 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 				"hand.png", 0, 0,  1, 1);
 		
 		mPopUpBlackBoardTextureRegion = BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(mBitmapTextureAtlasBoard, this,
-				"board.png", 0, 0,  1, 1); 
+				"board3.png", 0, 0,  1, 1); 
 		
 		mDusterTextureRegion =  BitmapTextureAtlasTextureRegionFactory.createTiledFromAsset(mBitmapTextureAtlasDuster, this,
 				"duster.png", 0, 0,  1, 1);
@@ -598,6 +609,7 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 		mBitmapTextureAtlasUkarFilled.load();
 		mBitmapTextureAtlasEkarFilled.load();
 		mBitmapTextureAtlasAkarFilled.load();
+		mBitmapTextureAtlasAakarFilled.load();
 		
 		
 		mBitmapTextureAtlasMoOutLine.load();
@@ -624,6 +636,7 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 		mBitmapTextureAtlasUkarOutLine.load();
 		mBitmapTextureAtlasEkarOutLine.load();
 		mBitmapTextureAtlasAkarOutLine.load();
+		mBitmapTextureAtlasAakarOutLine.load();
 		
 		//Menu
 		mBitmapTextureAtlasMenuBackground.load();
@@ -709,8 +722,8 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 		letter = 0;
 
 		//getting the renderView width and height for taking the screen shot
-		viewWidth = GameActivity.MainActivityInstace.mRenderSurfaceView.getWidth() - 490;
-		viewHeight = GameActivity.MainActivityInstace.mRenderSurfaceView.getHeight() - 165;
+		viewWidth = GameActivity.MainActivityInstace.mRenderSurfaceView.getWidth() - 470;
+		viewHeight = GameActivity.MainActivityInstace.mRenderSurfaceView.getHeight() - 90;
 		
 		moOutLineX = CAMERA_WIDTH / 2 - 130;
 		moOutLineY = CAMERA_HEIGHT / 2 - 130;
@@ -721,7 +734,7 @@ public class GameActivity extends SimpleBaseGameActivity implements IOnSceneTouc
 				
 		//1.Mo 2.Aa 3.e 4.Raw 5.Ko 6.Bo 7.TalibaSha 8.Lo 9.Po 10.Go 11.Ho
 		//12.Kho 13.Cho 14.No 15.A 16.Do 17.U 18.To 19.Toh 20.Doh 21.Ukar
-		//22.Ekar 23.Akar
+		//22.Ekar 23.Akar 24.Aakar
 		 
 //		//choose the letter with number
 		GameActivity.letter = Menu.letterNumber; 

@@ -75,8 +75,14 @@ public class PopUp
 		GameActivity.createPopUp.setScale((float) 0.5);
 		popUpArea.attachChild(GameActivity.createPopUp);
 
-		//creating board
-		GameActivity.board = new Sprite(180, -200, GameActivity.mPopUpBlackBoardTextureRegion,
+		//creating right board for showing the perfect letter
+		GameActivity.board = new Sprite(180, -300, GameActivity.mPopUpBlackBoardTextureRegion,
+				GameActivity.vertexBufferObjectManager);
+		GameActivity.board.setScale((float) 0.6);
+		popUpArea.attachChild(GameActivity.board);
+		
+		//creating left side board for showing the drawn letter
+		GameActivity.board = new Sprite(-180, -300, GameActivity.mPopUpBlackBoardTextureRegion,
 				GameActivity.vertexBufferObjectManager);
 		GameActivity.board.setScale((float) 0.6);
 		popUpArea.attachChild(GameActivity.board);
@@ -220,16 +226,16 @@ public class PopUp
 			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mAkarFilledTextureRegion,
 					GameActivity.vertexBufferObjectManager);
 		}
-			
-		
+		//Aakar
+		else if(GameActivity.letter == 24)
+		{
+			GameActivity.correctLetter = new Sprite(270, -130, GameActivity.mAakarFilledTextureRegion,
+					GameActivity.vertexBufferObjectManager);
+		}
 		GameActivity.correctLetter.setScale((float) 0.4);
 		popUpArea.attachChild(GameActivity.correctLetter);
 		
-		//creating another board
-		GameActivity.board = new Sprite(-180, -200, GameActivity.mPopUpBlackBoardTextureRegion,
-				GameActivity.vertexBufferObjectManager);
-		GameActivity.board.setScale((float) 0.6);
-		popUpArea.attachChild(GameActivity.board);
+	
 
 		
 		//closing the pop up window by pressing cross button
@@ -279,6 +285,8 @@ public class PopUp
 		if (upDown == 0) 
 		{
 			GameActivity.isPopupActive = true;
+			//Disabling the home button
+			GameActivity.mScene.unregisterTouchArea(GameActivity.homeButton);
 
 			createPopUpPath = new Path(2).to(100,
 					GameActivity.CAMERA_HEIGHT + 500).to(100, 100);
@@ -286,15 +294,18 @@ public class PopUp
 		// Up to down or closing pop up
 		else if (upDown == 1) 
 		{
+			//Making the home button run again
+			GameActivity.mScene.registerTouchArea(GameActivity.homeButton);
+			
 			createPopUpPath = new Path(2).to(100, 100).to(100,
 					GameActivity.CAMERA_HEIGHT + 500);
 		}
 
 
-		// If screen shot taken, then show screen shot image
+		// If screen shot taken, then show screen shot of drawn image
 		if (GameActivity.changeTexture == 1) 
 		{
-			GameActivity.drawnPicture = new Sprite(-40, -65, GameActivity.textureRegion,
+			GameActivity.drawnPicture = new Sprite(-40, -90, GameActivity.textureRegion,
 					GameActivity.vertexBufferObjectManager);
 			GameActivity.drawnPicture.setScale((float) 0.6);
 			popUpArea.attachChild(GameActivity.drawnPicture);

@@ -9,6 +9,7 @@ import Animation.AnimationDrawTutorial;
 import Animation.MonkeyTutorial;
 import Duster.Duster;
 import Letters.LetterStructureA;
+import Letters.LetterStructureAakar;
 import Letters.LetterStructureAkar;
 import Letters.LetterStructureBo;
 import Letters.LetterStructureCho;
@@ -64,10 +65,12 @@ public class createObjects
 				{
 				case TouchEvent.ACTION_DOWN:
 					
-					GameActivity.MainActivityInstace.finish();
-					GameActivity.MainActivityInstace.startActivity(new Intent(
-							GameActivity.MainActivityInstace.getBaseContext(), Menu.class));
-					
+//					if(GameActivity.isPopupActive== false)
+//					{
+						GameActivity.MainActivityInstace.finish();
+						GameActivity.MainActivityInstace.startActivity(new Intent(
+								GameActivity.MainActivityInstace.getBaseContext(), Menu.class));
+//					}
 					
 				break;
 				case TouchEvent.ACTION_UP:
@@ -1131,6 +1134,52 @@ public class createObjects
 					); 
 			
 //			LetterStructureAkar.createNumberSpriteAndCursor(); 
+			
+		}
+		//Outline of letter Aakar
+		else if(GameActivity.letter == 24)
+		{
+			GameActivity.OutLine = new Sprite(GameActivity.moOutLineX-70, GameActivity.moOutLineY-70,
+					GameActivity.mAakarOutLineTextureRegion, GameActivity.vertexBufferObjectManager);
+			GameActivity.OutLine.setScaleX((float)0.8);
+			GameActivity.OutLine.setScaleY((float)0.7);
+			GameActivity.mScene.attachChild(GameActivity.OutLine);
+			 
+			//set the animation time
+			AnimationDrawTutorial.setAnimatedChalkTime(0.7, 2.5, 0.8, 4);
+			
+			//MonkeyTutorial start 
+//			MonkeyTutorial.monkeyTutorialstart(3,
+//					GameActivity.moOutLineX +16, 
+//					GameActivity.moOutLineY + 2,
+//					GameActivity.moOutLineX + 55,
+//					GameActivity.moOutLineY + 2,
+//
+//					GameActivity.moOutLineX+55, GameActivity.moOutLineY+2,
+//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+27,
+//					GameActivity.moOutLineX+95, GameActivity.moOutLineY-24,
+//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+//					
+//					//no need
+//					GameActivity.moOutLineX+92, GameActivity.moOutLineY-2,
+//					GameActivity.moOutLineX+132, GameActivity.moOutLineY-2,
+//					GameActivity.moOutLineX+132, GameActivity.moOutLineY-2,
+//					GameActivity.moOutLineX+132, GameActivity.moOutLineY-2,
+//					
+//					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
+//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
+//					); 
+			
+			LetterStructureAakar.createNumberSpriteAndCursor(); 
 			
 		}
 	}

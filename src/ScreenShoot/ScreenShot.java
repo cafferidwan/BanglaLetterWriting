@@ -20,7 +20,7 @@ public class ScreenShot
 		
 		GameActivity.cursor.setVisible(false);
 		//final float time = System.currentTimeMillis();
-		GameActivity.screenCapture.capture(264, 90, GameActivity.viewWidth, GameActivity.viewHeight,FileUtils.getAbsolutePathOnInternalStorage
+		GameActivity.screenCapture.capture(250, 60, GameActivity.viewWidth, GameActivity.viewHeight,FileUtils.getAbsolutePathOnInternalStorage
 				(GameActivity.MainActivityInstace.getApplicationContext(), "/screen"+".jpg") , new IScreenCaptureCallback() 
 		{ 
 			@Override

@@ -154,8 +154,14 @@ public class Duster
 							
 							GameActivity.mScene.detachChild(GameActivity.handTutorial);
 							GameActivity.mScene.unregisterUpdateHandler(GameActivity.timer1);
+							
+							//if the letter is Aa, then start Aakar after it
+							if(Menu.letterNumber == 2)
+							{
+								 Menu.letterNumber = 24;
+							}
 							//if the letter is A, then start Akar after it
-							if(Menu.letterNumber == 15)
+							else if(Menu.letterNumber == 15)
 							{
 								 Menu.letterNumber = 23;
 							}

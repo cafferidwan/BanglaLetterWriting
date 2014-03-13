@@ -75,8 +75,10 @@ public class Menu extends SimpleBaseGameActivity implements IOnSceneTouchListene
 
 		BitmapTextureAtlasTextureRegionFactory
 				.setAssetBasePath("iWriteGFX/MenuLetters/");
-		for (int i = 1; i <= 5; i++) {
-			for (int j = 1; j <= 4; j++) {
+		for (int i = 1; i <= 5; i++)
+		{
+			for (int j = 1; j <= 4; j++)
+			{
 				mBitmapTextureAtlasMenuLetters[i][j] = new BitmapTextureAtlas(
 						this.getTextureManager(), 400, 400,
 						TextureOptions.BILINEAR);
@@ -136,7 +138,7 @@ public class Menu extends SimpleBaseGameActivity implements IOnSceneTouchListene
 							
 							//1.Mo 2.Aa 3.e 4.Raw 5.Ko 6.Bo 7.TalibaSha 8.Lo 9.Po 10.Go 11.Ho
 							//12.Kho 13.Cho 14.No 15.A 16.Do 17.U 18.To 19.Toh 20.Doh 21.Ukar
-							//22.Ekar 23.Akar
+							//22.Ekar 23.Akar 24.Aakar
 						
 							//Mo
 							if(setMenuLetter(pSceneTouchEvent, 1,1)== true)
@@ -244,6 +246,7 @@ public class Menu extends SimpleBaseGameActivity implements IOnSceneTouchListene
 							else if(setMenuLetter(pSceneTouchEvent, 5,4)== true)
 							{
 								setStartActivity(11,5,4); 
+//								setStartActivity(24,5,4); 
 							}
 							
 							
