@@ -1149,37 +1149,37 @@ public class createObjects
 			AnimationDrawTutorial.setAnimatedChalkTime(0.7, 2.5, 0.8, 4);
 			
 			//MonkeyTutorial start 
-//			MonkeyTutorial.monkeyTutorialstart(3,
-//					GameActivity.moOutLineX +16, 
-//					GameActivity.moOutLineY + 2,
-//					GameActivity.moOutLineX + 55,
-//					GameActivity.moOutLineY + 2,
-//
-//					GameActivity.moOutLineX+55, GameActivity.moOutLineY+2,
-//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+27,
-//					GameActivity.moOutLineX+95, GameActivity.moOutLineY-24,
-//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-//					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
-//					
-//					//no need
-//					GameActivity.moOutLineX+92, GameActivity.moOutLineY-2,
-//					GameActivity.moOutLineX+132, GameActivity.moOutLineY-2,
-//					GameActivity.moOutLineX+132, GameActivity.moOutLineY-2,
-//					GameActivity.moOutLineX+132, GameActivity.moOutLineY-2,
-//					
-//					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
-//					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
-//					); 
+			MonkeyTutorial.monkeyTutorialstart(3,
+					GameActivity.moOutLineX +16, 
+					GameActivity.moOutLineY + 2,
+					GameActivity.moOutLineX + 55,
+					GameActivity.moOutLineY + 2,
+
+					GameActivity.moOutLineX+55, GameActivity.moOutLineY+2,
+					GameActivity.moOutLineX+95, GameActivity.moOutLineY+27,
+					GameActivity.moOutLineX+95, GameActivity.moOutLineY-24,
+					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+					GameActivity.moOutLineX+95, GameActivity.moOutLineY+180,
+					
+					//no need
+					GameActivity.moOutLineX+92, GameActivity.moOutLineY-2,
+					GameActivity.moOutLineX+132, GameActivity.moOutLineY-2,
+					GameActivity.moOutLineX+132, GameActivity.moOutLineY-2,
+					GameActivity.moOutLineX+132, GameActivity.moOutLineY-2,
+					
+					GameActivity.moOutLineX+142, GameActivity.moOutLineY-20,
+					GameActivity.moOutLineX+165, GameActivity.moOutLineY-20
+					); 
 			
-			LetterStructureAakar.createNumberSpriteAndCursor(); 
+//			LetterStructureAakar.createNumberSpriteAndCursor(); 
 			
 		}
 	}
